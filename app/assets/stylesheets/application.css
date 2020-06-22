@@ -13,3 +13,67 @@
  *= require_tree .
  *= require_self
  */
+
+html, body, h1, h2, h3, h4, h5, h6, div, main, nav, p, ul, ol, li, aside, article, header, footer {
+   border: 0px;
+   margin: 0px;
+   padding: 0px;
+   outline: 0px;
+   text-align: inherit;
+   font: inherit;
+   background-color: transparent;
+   list-style: none;
+}
+
+body {
+   font-family: system-ui, 'Roboto', sans-serif;
+   background-color: #545E56;
+   /* background-color: #7EBDC3; THIS WAS MY INITIAL COLOR*/
+   /* padding: 50px; */
+}
+
+header {
+   margin: 10px 230px;
+}
+
+.login-form-container {
+   display: flex;
+   justify-content: space-between;
+   color: white;
+}
+
+.login-form {
+   display: flex;
+   justify-content: space-between;
+}
+
+main.signup {
+   background-color: #BFD2BF;
+   display: flex;
+   justify-content: space-between;
+}
+
+.signup-intro-container {
+   margin-left: 230px;
+   margin-right: 80px;
+}
+
+.signup-intro-container > h2 {
+   font-weight: 700;
+   font-size: 30px;
+   padding: 40px 5px;
+}
+
+.signup-intro-container > ul > li {
+   padding: 25px 5px;
+}
+
+.signup-form-container {
+   margin-right: 230px;
+}
+.signup-form-container > h2 {
+   font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+   font-weight: 700; /* Sign Up */
+   font-size: 36px;
+   padding-top: 15px;
+}
