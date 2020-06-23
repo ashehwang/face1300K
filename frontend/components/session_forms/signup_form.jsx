@@ -6,6 +6,7 @@ class SignupForm extends React.Component {
         super(props);
         this.state = { first_name: "First name", last_name: "Last name", email: "Mobile number or email", password: "New password", birthday: "", gender: "", month: "", day: "", year: "" };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
 
     update(property){
@@ -20,6 +21,12 @@ class SignupForm extends React.Component {
         this.props.signup(this.state);
     }
 
+    handleDemoLogin(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        this.props.loginDemoUser();
+    }
+
     render(){
 
         return(
@@ -27,9 +34,9 @@ class SignupForm extends React.Component {
             <div className="signup-intro-container">
                 <h2>Connect with friends and the world around you on functionbook.</h2>
                 <ul className="signup-intro-list">
-                    <li><i class="far fa-newspaper"></i><strong>See photos and updates</strong> from friends in News Feed.</li>
-                    <li><i class="fas fa-network-wired"></i><strong>Share what's new</strong> in your life on your Timeline.</li>
-                    <li><i class="fas fa-podcast"></i><strong>Find more</strong> of what you're looking for with functionbook Search.</li>
+                    <li><i className="far fa-newspaper"></i><strong>See photos and updates</strong> from friends in News Feed.</li>
+                    <li><i className="fas fa-network-wired"></i><strong>Share what's new</strong> in your life on your Timeline.</li>
+                    <li><i className="fas fa-podcast"></i><strong>Find more</strong> of what you're looking for with functionbook Search.</li>
                 </ul>
             </div>
             <div className="signup-form-container">
@@ -40,9 +47,14 @@ class SignupForm extends React.Component {
                             <input type="text" value={this.state.first_name} onChange={this.update("first_name")} />
                             <input type="text" value={this.state.last_name} onChange={this.update("last_name")} />
                     </div>
-                    <input type="text" value={this.state.email} onChange={this.update("email")} />
-                    <input type="password" value={this.state.password} onChange={this.update("password")} />
-                    <label className="signup-birthday-label">Birthday
+                    <div className="signup-email">
+                        <input type="text" value={this.state.email} onChange={this.update("email")} />
+                    </div>
+                    <div className="signup-password">
+                        <input type="password" value={this.state.password} onChange={this.update("password")} />
+                    </div>
+                    <p className="signup-label">Birthday</p>
+                    <label className="signup-birthday">
                         <div className="signup-month">
                             <select onChange={this.update("month")}>
                                 <option disabled defaultValue >Month</option>
@@ -129,23 +141,27 @@ class SignupForm extends React.Component {
                             </select>
                         </div>
                     </label>
-                    <label className="signup-gender-label">Gender
-                        <label>Male
-                            <input type="radio" value="male" onChange={this.update("gender")} />
+                    <p className="signup-label">Gender</p>
+                    <div className="signup-gender">
+                        <label>
+                            <input type="radio" value="male" onChange={this.update("gender")} />   Male
                         </label>
-                        <label>Female
-                            <input type="radio" value="female" onChange={this.update("gender")} />
+                        <label>
+                            <input type="radio" value="female" onChange={this.update("gender")} />   Female
                         </label>
-                        <label>Other
-                            <input type="radio" value="other" onChange={this.update("gender")} />
+                        <label>
+                            <input type="radio" value="other" onChange={this.update("gender")} />   Other
                         </label>
-                    </label>
+                    </div>
                     <div className="signup-terms">
                         <p>
                             By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.
                         </p>
                     </div>
-                    <input className="signup-submit" type="submit" value="Sign Up" />
+                    <div className="signup-buttons">
+                        <input className="signup-submit" type="submit" value="Sign Up" />
+                        <input className="login-demo" type="submit" value="Demo User" onClick={this.handleDemoLogin}/>
+                    </div>
                 </form>
             </div>
         </main>

@@ -34,3 +34,8 @@ export const logout = () => dispatch => (
     APIUtil.logout()
         .then(user => dispatch(logoutCurrentUser()))
 );
+
+export const loginDemoUser = () => dispatch => (
+    APIUtil.login({ email: "ahri@aa.io", password: "yuro0228" })
+        .then(user => dispatch(receiveCurrentUser(user)))
+);

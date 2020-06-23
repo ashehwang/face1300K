@@ -1,0 +1,148 @@
+
+/* LEFT SIDE */
+
+main.signup {
+   background-color: #BFD2BF;
+   display: flex;
+   height: 600px;
+   justify-content: space-between;
+}
+
+.signup-intro-container {
+   margin-left: 230px;
+   margin-right: 80px;
+}
+
+.signup-intro-container > h2 {
+   font-weight: 600;
+   font-size: 30px;
+   padding: 40px 5px;
+   font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+   width: 518px;
+}
+
+.signup-intro-container > ul > li {
+   padding: 20px 5px 5px 5px;
+}
+
+ul.signup-intro-list > li > i {
+   font-size: 50px;
+   margin-bottom: 15px;
+   margin-right: 15px;
+   color: #7F534B;
+}
+
+/* RIGHT SIDE */
+
+.signup-form-container {
+   margin-right: 230px;
+   /* background: red; */
+   padding-top: 22px;
+}
+.signup-form-container > h2 {
+   font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+   font-weight: 700; /* Sign Up */
+   font-size: 36px;
+   padding-top: 15px;
+   width: 400px;
+}
+
+.signup-prop-2 {
+   display: inline-block;
+   padding: 10px 0;
+   font-size: 19px;
+}
+
+.signup-fullname {
+   display: flex;
+   padding-right: 42px;
+   justify-content: space-between;
+   margin-bottom: 8px;
+}
+
+.signup-fullname > input[type=text] {
+   padding: 8px 5px 8px 8px;
+   width: 159px;
+   border-radius: 3px;
+   border: 1px solid grey;
+}
+
+.signup-email > input[type=text] {
+   display: block;
+   border: 1px solid grey;
+   border-radius: 3px;
+   padding: 8px;
+   width: 340px;
+   margin-bottom: 8px;
+}
+
+.signup-password > input[type=password] {
+   display: block;
+   border: 1px solid grey;
+   border-radius: 3px;
+   padding: 8px;
+   width: 340px;
+}
+
+.signup-label {
+   display: block;
+   padding: 15px 0 8px 0;
+}
+
+.signup-birthday {
+   width: 358px;
+   display: flex;
+   /* background-color: red; */
+   justify-content: space-between;
+}
+
+.signup-month > select {
+   padding: 6px 5px 6px 6px;
+   border-radius: 3px;
+   border: 1px solid grey;
+   width: 138px;
+}
+
+.signup-day > select {
+   padding: 6px 5px 6px 6px;
+   border-radius: 3px;
+   border: 1px solid grey;
+   width: 90px;
+}
+
+.signup-year > select {
+   padding: 6px 5px 6px 6px;
+   border-radius: 3px;
+   border: 1px solid grey;
+   width: 118px;
+}
+
+.signup-gender {
+   width: 340px;
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 16px;
+}
+
+.signup-terms > p {
+   font-size: 12px;
+   color: grey;
+   width: 340px;
+}
+
+.signup-buttons {
+   display: flex;
+   justify-content: space-between;
+   width: 356px;
+   margin-top: 12px;
+}
+
+.signup-buttons > input[type=submit] {
+   padding: 10px 20px;
+   background-color: #003E1F;  /* COLOOOOORRRRRRRRRRRRRRRRR*/
+   font-weight: 700;
+   color: white;
+   border-radius: 4px;
+   width: 160px;
+   /* box-shadow: 0 3px 3px 0 black; */
+}

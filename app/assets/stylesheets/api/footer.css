@@ -1,0 +1,16 @@
+
+
+.links {
+   border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.links > a {
+   text-decoration: none;
+   color: lightgray;
+   display: inline-block;
+   padding-right: 15px;
+}
+
+a:link {
+   color: lightgray;
+}

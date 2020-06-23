@@ -6,18 +6,19 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import CreatePostFormContainer from './posts/create_post_form_container';
 import PostIndexContainer from './posts/post_index_container';
 import Footer from './footer/footer';
+import Modal from './modal/modal';
 
 
 const App = () => (
     <div>
         <header>
+            <ProtectedRoute path = "/" component={NavBarContainer} />
             <AuthRoute path="/" component={LogInFormContainer} />
         </header>
             <AuthRoute path="/" component={SignupFormContainer} />
             <AuthRoute path="/" component={Footer} />
-        <NavBarContainer />
-        <ProtectedRoute path="/" component={CreatePostFormContainer} />
-        <ProtectedRoute path="/" component={PostIndexContainer} />
+            <ProtectedRoute path="/" component={CreatePostFormContainer} />
+            <ProtectedRoute path="/" component={PostIndexContainer} />
     </div>
 );
 

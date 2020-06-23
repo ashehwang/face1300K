@@ -1,0 +1,24 @@
+.login-form-container {
+   display: flex;
+   justify-content: space-between;
+   color: white;
+}
+
+.login-form {
+   display: flex;
+   justify-content: space-between;
+}
+
+.label-login {
+   font-size: 12px;
+}
+
+.login-password {
+   padding: 0 13px;
+}
+
+.login-submit {
+   display: flex;
+   align-items: flex-end;
+   margin-bottom: 9px;
+}
