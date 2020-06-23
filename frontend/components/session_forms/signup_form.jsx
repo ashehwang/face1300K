@@ -27,9 +27,9 @@ class SignupForm extends React.Component {
             <div className="signup-intro-container">
                 <h2>Connect with friends and the world around you on functionbook.</h2>
                 <ul className="signup-intro-list">
-                    <li><strong>See photos and updates</strong> from friends in News Feed.</li>
-                    <li><strong>Share what's new</strong> in your life on your Timeline.</li>
-                    <li><strong>Find more</strong> of what you're looking for with functionbook Search.</li>
+                    <li><i class="far fa-newspaper"></i><strong>See photos and updates</strong> from friends in News Feed.</li>
+                    <li><i class="fas fa-network-wired"></i><strong>Share what's new</strong> in your life on your Timeline.</li>
+                    <li><i class="fas fa-podcast"></i><strong>Find more</strong> of what you're looking for with functionbook Search.</li>
                 </ul>
             </div>
             <div className="signup-form-container">

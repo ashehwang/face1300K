@@ -29,24 +29,22 @@ class LoginForm extends React.Component {
     );
   }
 
+
     render() {
         return (
           <div className="login-form-container">
-            <div className="mainlogo"> logo will be here </div>
+            <div className="mainlogo"><img src="https://i.ibb.co/s23rFxF/logo4.png" alt="logo" /></div>
             <div className="errors-box">{this.renderErrors()}</div>
             <form className="login-form" onSubmit={this.handleSubmit}>
               <div className="login-email">
-                  Email
-                  <br/>
+                  <p className="label-login">Email or Phone</p>
                   <input type="text" value={this.state.email} onChange={this.update("email")}/>
               </div>
               <div className="login-password">
-                  Password
-                  <br />
+                  <p className="label-login">Password</p>
                   <input type="password" value={this.state.password} onChange={this.update("password")}/>
               </div>
               <div className="login-submit">
-                <br />
                 <button>Log In</button>
               </div>
             </form>
