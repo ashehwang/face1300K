@@ -12,14 +12,22 @@ class NavBar extends React.Component {
       <nav className="navbar-container">
         <div className="searchbar">
           <form className="searchform">
-              <i className="fab fa-facebook"></i>
-              <input type="text" placeholder="   search functionbook"/>
+              <Link to="/"><i className="fab fa-facebook"></i></Link>
+            <input type="text" placeholder="   	search &int;book"/>
           </form>
         </div>
-        <a href="/"><i className="fas fa-home"></i></a>
-        <a href="#"><i className="fab fa-youtube-square"></i></a>
-        <a href="#"><i className="fas fa-laptop-house"></i></a>
-        <a href="#"><i className="fas fa-gamepad"></i></a>
+        <div className="squarebutton">
+          <Link to="/"><i className="fas fa-home"></i></Link>
+        </div>
+        <div className="squarebutton">
+          <a href="#"><i className="fab fa-youtube-square"></i></a>
+        </div>
+        <div className="squarebutton">
+          <a href="#"><i className="fas fa-laptop-house"></i></a>
+        </div >
+        <div className="squarebutton">
+          <a href="#"><i className="fas fa-gamepad"></i></a>
+        </div>
         <div className="navbar-right">
           <Link to={`/profile/${this.props.currentUser.id}`} >          
               <div className="profile-small">
@@ -27,14 +35,19 @@ class NavBar extends React.Component {
                 <h2>Hello {this.props.currentUser.first_name}!</h2>
               </div>
           </Link>
-          <a href="#"><i className="fas fa-plus"></i></a>
-          <a href="#"><i className="fab fa-facebook-messenger"></i></a>
-          <a href="#"><i className="fas fa-bell"></i></a>
-          <a href="#"><i className="fas fa-caret-down"></i></a>
+          <div className="roundbutton">
+            <a href="#"><i className="fas fa-plus"></i></a>
+          </div>
+          <div className="roundbutton">
+            <a href="#"><i className="fab fa-facebook-messenger"></i></a>
+          </div>
+          <div className="roundbutton">
+            <a href="#"><i className="fas fa-bell"></i></a>
+          </div>
+          <div className="roundbutton">
+            <a><i className="fas fa-caret-down" onClick={this.props.logout}></i></a>
+          </div >
         </div>
-        <button className="logout-button" onClick={this.props.logout}>
-          Log Out
-        </button>
       </nav>
     )
   }

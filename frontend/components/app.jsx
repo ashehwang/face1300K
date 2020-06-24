@@ -10,6 +10,7 @@ import Footer from './footer/footer';
 import Modal from './modal/modal';
 import SplashContainer from './splash/splash_container';
 import ProfileContainer from './profile/profile_container';
+import ContactsContainer from './contacts/contacts-container';
 
 
 const App = () => (
@@ -25,7 +26,8 @@ const App = () => (
                 <ProtectedRoute path="/" component={CreatePostFormContainer} />
                 <ProtectedRoute path="/" component={PostIndexContainer} />
                 <Route exact path="/profile/:userId" component={ProfileContainer}/>
-            </div>  
+            </div>
+            <ProtectedRoute path="/" component={ContactsContainer} />  
         </article>
     </div>
 );

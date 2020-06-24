@@ -1,0 +1,33 @@
+.trigger-create-post-box {
+    width: 97.5%;
+    background-color: white;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.trigger-top {
+    padding-bottom: 10px;
+    border-bottom: solid darkgray 1px;
+}
+
+.trigger-top > input[type=text] {
+    padding: 8px;
+    width: 90%;
+    border-radius: 16px;
+    background-color: lightgray;
+    opacity: 50%;
+    border: lightgray solid 1px;
+}
+
+.trigger-bottom {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 10px 10px 10px;
+}
+
+ul.trigger-bottom > li > i {
+    color: pink;
+    display: inline-block;
+    padding: 0 7px;
+    font-size: 20px;
+}

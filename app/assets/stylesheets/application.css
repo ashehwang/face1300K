@@ -53,14 +53,18 @@ footer {
 
 article {
    background-color: #84DCCF;
-   padding: 15px 125px;
    display: flex;
 }
 
 aside {
    background-color: #826251; /*splashcontainer*/
+   width: 23%;
+   box-sizing: border-box;
+   padding: 20px;
 }
 
 .newsfeed-container {
    background-color: #FFA69E;
+   width: 53%;
+   padding: 20px;
 }

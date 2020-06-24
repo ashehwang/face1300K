@@ -4,7 +4,8 @@ import { fetchPosts, deletePost } from '../../actions/post_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mSTP = (state) => ({
-    posts: Object.values(state.entities.posts)
+    posts: Object.values(state.entities.posts),
+    currentUser: state.entities.users[state.session.id]
 });
 
 const mDTP = (dispatch) => ({
