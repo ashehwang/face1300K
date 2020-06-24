@@ -1,11 +1,11 @@
 import React from 'react';
 
 const PostIndexItem = ({post, deletePost}) => (
-    <li>
+    <div className="trigger-create-post-box">
         {post.body}
         <img src={post.photoUrl} />
         <button onClick={() => deletePost(post.id)}>Delete Post</button>
-    </li>
+    </div>
 )
 
 export default PostIndexItem;

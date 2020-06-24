@@ -14,7 +14,7 @@ class PostIndex extends React.Component {
             <div className="post-index-box">
                 <div className="trigger-create-post-box">
                     <div className="trigger-top">
-                        <input type="text" placeholder={`What's on your mind, ${currentUser.first_name}?`}/>
+                        <input onClick={() => openModal('createpost')} type="text" placeholder={`What's on your mind, ${currentUser.first_name}?`}/>
                     </div>
                     <ul className="trigger-bottom">
                         <li><i className="fas fa-video"></i>Live Video</li>
@@ -22,12 +22,9 @@ class PostIndex extends React.Component {
                         <li><i className="fas fa-laugh-wink"></i>Feeling/Activity</li>
                     </ul>
                 </div>
-                <div className="create-post-modal">
-                    <button onClick={() => openModal('createpost')}>Create MODAL Post</button>
-                </div>
-                <ul> All my posts
+                <div> All my posts
                     {posts.map(post => <PostIndexItem key={post.id} post={post} deletePost={deletePost}/>)}
-                </ul>
+                </div>
             </div>
         )
     }

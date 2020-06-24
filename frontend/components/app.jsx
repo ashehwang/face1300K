@@ -23,7 +23,6 @@ const App = () => (
             <Modal />
             <ProtectedRoute path="/" component={SplashContainer} />
             <div className="newsfeed-container">
-                <ProtectedRoute path="/" component={CreatePostFormContainer} />
                 <ProtectedRoute path="/" component={PostIndexContainer} />
                 <Route exact path="/profile/:userId" component={ProfileContainer}/>
             </div>

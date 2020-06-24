@@ -3,6 +3,8 @@
     background-color: white;
     border-radius: 7px;
     padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px 0px rgba(133,133,133,1);
 }
 
 .trigger-top {
@@ -11,7 +13,7 @@
 }
 
 .trigger-top > input[type=text] {
-    padding: 8px;
+    padding: 12px;
     width: 90%;
     border-radius: 16px;
     background-color: lightgray;
@@ -22,12 +24,22 @@
 .trigger-bottom {
     display: flex;
     justify-content: space-around;
-    padding: 15px 10px 10px 10px;
 }
 
 ul.trigger-bottom > li > i {
     color: pink;
     display: inline-block;
-    padding: 0 7px;
     font-size: 20px;
+    padding-right: 10px;
+}
+
+.trigger-bottom > li {
+    display: block;
+    padding: 5px 55px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.trigger-bottom > li:hover {
+    background-color: rgba(0,0,0,0.1);
 }
