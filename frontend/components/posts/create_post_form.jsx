@@ -17,15 +17,7 @@ class CreatePostForm extends React.Component {
         if (this.state.photoFile) {
             formData.append('post[photo]', this.state.photoFile);
         }
-        // this.props.createPost(formData);
-        $.ajax({
-            url: '/api/posts',
-            method: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false
-        }).then( post => console.log(post));
-
+        this.props.createPhotoPost(formData);
         this.setState({ body: "" });
     }
 

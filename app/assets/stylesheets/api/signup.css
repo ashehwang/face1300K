@@ -67,7 +67,7 @@ ul.signup-intro-list > li > i {
    border: 1px solid grey;
 }
 
-.signup-email > input[type=text] {
+.signup-email > input[type=email] {
    display: block;
    border: 1px solid grey;
    border-radius: 3px;
@@ -147,4 +147,22 @@ ul.signup-intro-list > li > i {
    border-radius: 4px;
    width: 160px;
    /* box-shadow: 0 3px 3px 0 black; */
+}
+
+input:invalid {
+   border: 2px solid red;
+}
+
+input:focus:invalid {
+   border-color: grey;
+}
+
+.login-error {
+   display: block;
+   position: fixed;
+   top: 73%;
+   right: 43%;
+   padding: 20px;
+   font-weight: 700;
+   color: red;
 }

@@ -1,24 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const NavBar = ({ currentUser, logout }) => {
-  
-  const NotLoggedIn = () => (
-    <nav>
-        you are not logged in
-    </nav>
-  );
+class NavBar extends React.Component {
 
-  const LoggedInGreetings = () => (
-    <div>
-      <h2>Hello, { currentUser.first_name }!</h2>
-      <button className="logout-button" onClick={logout}>
-        Log Out
-      </button>
-    </div>
-  );
+  constructor(props){
+    super(props);
+  }
 
-  return currentUser ? LoggedInGreetings() : NotLoggedIn();
-
-};
+  render(){
+    return(
+      <nav className="navbar-container">
+        <div className="searchbar">
+          <form>
+              <i className="fab fa-facebook-square"></i>
+              <input type="text" placeholder="search for friends"/>
+              <input type="submit" value="Search" />
+          </form>
+        </div>
+        <h2>Hello, {this.props.currentUser.first_name}!</h2>
+        <Link to={`/profile/${this.props.currentUser.id}`} >To Profile Page</Link>
+        <button className="logout-button" onClick={this.props.logout}>
+          Log Out
+        </button>
+      </nav>
+    )
+  }
+}
 
 export default NavBar;

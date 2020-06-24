@@ -36,9 +36,29 @@ header {
    margin: 30px 230px 5px 230px;
 }
 
+
+
+nav {
+   background: rgb(102, 30, 51);
+}
+
 footer {
    background: white;
    padding: 40px 230px 5px 230px;
    color: lightgray;
    font-size: 14px;
+}
+
+article {
+   background-color: #84DCCF;
+   padding: 15px 125px;
+   display: flex;
+}
+
+aside {
+   background-color: #826251; /*splashcontainer*/
+}
+
+.newsfeed-container {
+   background-color: #FFA69E;
 }

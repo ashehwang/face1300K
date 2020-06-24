@@ -4,7 +4,7 @@ class SignupForm extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = { first_name: "First name", last_name: "Last name", email: "Mobile number or email", password: "New password", birthday: "", gender: "", month: "", day: "", year: "" };
+        this.state = { first_name: "", last_name: "", email: "", password: "", birthday: "", gender: "", month: "", day: "", year: "" };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
@@ -27,6 +27,8 @@ class SignupForm extends React.Component {
         this.props.loginDemoUser();
     }
 
+
+
     render(){
 
         return(
@@ -44,20 +46,20 @@ class SignupForm extends React.Component {
                 <h4 className="signup-prop-2">It's quick and easy.</h4>
                 <form className="signup-form" onSubmit={this.handleSubmit}>
                     <div className="signup-fullname">
-                            <input type="text" value={this.state.first_name} onChange={this.update("first_name")} />
-                            <input type="text" value={this.state.last_name} onChange={this.update("last_name")} />
+                            <input type="text" required id="firstName" placeholder="First name" value={this.state.first_name} onChange={this.update("first_name")} />
+                            <input type="text" required id="lastName" placeholder="Last name" value={this.state.last_name} onChange={this.update("last_name")} />
                     </div>
                     <div className="signup-email">
-                        <input type="text" value={this.state.email} onChange={this.update("email")} />
+                            <input type="email" required id="email" placeholder="Mobile number or email" value={this.state.email} onChange={this.update("email")} />
                     </div>
                     <div className="signup-password">
-                        <input type="password" value={this.state.password} onChange={this.update("password")} />
+                        <input type="password" required id="password" minLength="6" placeholder="New password" value={this.state.password} onChange={this.update("password")} />
                     </div>
                     <p className="signup-label">Birthday</p>
                     <label className="signup-birthday">
                         <div className="signup-month">
-                            <select onChange={this.update("month")}>
-                                <option disabled defaultValue >Month</option>
+                            <select required onChange={this.update("month")}>
+                                <option defaultValue>Month</option>
                                 <option value="01">January</option>
                                 <option value="02">February</option>
                                 <option value="03">March</option>
@@ -73,8 +75,8 @@ class SignupForm extends React.Component {
                             </select>
                         </div>
                         <div className="signup-day">
-                            <select onChange={this.update("day")}>
-                                <option disabled defaultValue >Day</option>
+                            <select required onChange={this.update("day")}>
+                                <option defaultValue >Day</option>
                                 <option value="01">1</option>
                                 <option value="02">2</option>
                                 <option value="03">3</option>
@@ -109,8 +111,54 @@ class SignupForm extends React.Component {
                             </select>
                         </div>
                         <div className="signup-year">
-                            <select onChange={this.update("year")}>
-                                <option disabled defaultValue>Year</option>
+                            <select required onChange={this.update("year")}>
+                                <option defaultValue>Year</option>
+                                <option value="1939">1939</option>
+                                <option value="1940">1940</option>
+                                <option value="1941">1941</option>
+                                <option value="1942">1942</option>
+                                <option value="1943">1943</option>
+                                <option value="1944">1944</option>
+                                <option value="1945">1945</option>
+                                <option value="1946">1946</option>
+                                <option value="1947">1947</option>
+                                <option value="1948">1948</option>
+                                <option value="1949">1949</option>
+                                <option value="1950">1950</option>
+                                <option value="1951">1951</option>
+                                <option value="1952">1952</option>
+                                <option value="1953">1953</option>
+                                <option value="1954">1954</option>
+                                <option value="1955">1955</option>
+                                <option value="1956">1956</option>
+                                <option value="1957">1957</option>
+                                <option value="1958">1958</option>
+                                <option value="1959">1959</option>
+                                <option value="1960">1960</option>
+                                <option value="1961">1961</option>
+                                <option value="1962">1962</option>
+                                <option value="1963">1963</option>
+                                <option value="1964">1964</option>
+                                <option value="1965">1965</option>
+                                <option value="1966">1966</option>
+                                <option value="1967">1967</option>
+                                <option value="1968">1968</option>
+                                <option value="1969">1969</option>
+                                <option value="1970">1970</option>
+                                <option value="1971">1971</option>
+                                <option value="1972">1972</option>
+                                <option value="1973">1973</option>
+                                <option value="1974">1974</option>
+                                <option value="1975">1975</option>
+                                <option value="1976">1976</option>
+                                <option value="1977">1977</option>
+                                <option value="1978">1978</option>
+                                <option value="1979">1979</option>
+                                <option value="1980">1980</option>
+                                <option value="1981">1981</option>
+                                <option value="1982">1982</option>
+                                <option value="1983">1983</option>
+                                <option value="1984">1984</option>
                                 <option value="1985">1985</option>
                                 <option value="1986">1986</option>
                                 <option value="1987">1987</option>
@@ -144,13 +192,13 @@ class SignupForm extends React.Component {
                     <p className="signup-label">Gender</p>
                     <div className="signup-gender">
                         <label>
-                            <input type="radio" value="male" onChange={this.update("gender")} />   Male
+                            <input type="radio" required name="sex" value="male" onChange={this.update("gender")} />   Male
                         </label>
                         <label>
-                            <input type="radio" value="female" onChange={this.update("gender")} />   Female
+                            <input type="radio" required name="sex" value="female" onChange={this.update("gender")} />   Female
                         </label>
                         <label>
-                            <input type="radio" value="other" onChange={this.update("gender")} />   Other
+                            <input type="radio" required name="sex" value="other" onChange={this.update("gender")} />   Other
                         </label>
                     </div>
                     <div className="signup-terms">

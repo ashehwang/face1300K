@@ -36,3 +36,21 @@ export const deletePost = (postId) => (
         url: `/api/posts/${postId}`
     })
 );
+
+export const fetchUserPosts = (userId) => (
+    $.ajax({
+        method: "GET",
+        url: `/api/posts`,
+        data: { userId }
+    })
+);
+
+export const createPhotoPost = formData => (
+    $.ajax({
+        method: 'POST',
+        url: '/api/posts',
+        data: formData,
+        contentType: false,
+        processData: false
+    })
+)

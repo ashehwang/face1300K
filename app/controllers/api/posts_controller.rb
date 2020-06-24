@@ -1,8 +1,13 @@
 class Api::PostsController < ApplicationController
 
     def index
-        @posts = Post.all
-        render :index
+        if params[:userId]
+            user = User.find_by(id: params[:userId])
+            @posts = user.posts
+        else
+            @posts = Post.all
+            render :index
+        end
     end
 
     def show

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
+import CreatePostFormContainer from '../posts/create_post_form_container';
 
 function Modal({ modal, closeModal }) {
 
@@ -8,10 +9,19 @@ function Modal({ modal, closeModal }) {
         return null;
     }
 
+    let component;
+    switch (modal) {
+        case 'createpost':
+            component = <CreatePostFormContainer />;
+            break;
+        default:
+            return null;
+    }
+
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
-                component comes here
+                { component }
             </div>
         </div>
     )

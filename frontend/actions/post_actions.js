@@ -44,3 +44,13 @@ export const deletePost = (postId) => dispatch => (
     PostApiUtil.deletePost(postId)
         .then(() => dispatch(removePost(postId)))
 );
+
+export const fetchUserPosts = (userId) => dispatch => (
+    PostApiUtil.fetchUserPosts(userId)
+        .then( posts => dispatch(receiveAllPosts(posts)) )
+);
+
+export const createPhotoPost = (formData) => dispatch => (
+    PostApiUtil.createPhotoPost(formData)
+        .then (post => dispatch(receivePost(post)))
+);

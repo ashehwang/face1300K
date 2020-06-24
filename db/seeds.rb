@@ -19,12 +19,3 @@
     # t.string "current_city"
 
     # User.delete_all
-
-    u1 = User.create!(
-        email: "ashe@nyu.edu",
-        password: "yuro0228",
-        first_name: "Ashe",
-        last_name: "Hwang",
-        birthday: "1986-02-28",
-        gender: "female"
-    )
