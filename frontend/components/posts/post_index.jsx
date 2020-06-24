@@ -5,10 +5,11 @@ class PostIndex extends React.Component {
 
     componentDidMount(){
         this.props.fetchPosts();
+        this.props.fetchAllUsers();
     }
 
     render() {
-        const { posts, deletePost, openModal, currentUser } = this.props;
+        const { posts, deletePost, openModal, currentUser, users } = this.props;
 
         return(
             <div className="post-index-box">
@@ -23,7 +24,7 @@ class PostIndex extends React.Component {
                     </ul>
                 </div>
                 <div> All my posts
-                    {posts.map(post => <PostIndexItem key={post.id} post={post} deletePost={deletePost}/>)}
+                    {posts.map(post => <PostIndexItem author={users[post.user_id]} key={post.id} post={post} deletePost={deletePost}/>)}
                 </div>
             </div>
         )

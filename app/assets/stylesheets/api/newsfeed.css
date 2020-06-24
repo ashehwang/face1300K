@@ -43,3 +43,42 @@ ul.trigger-bottom > li > i {
 .trigger-bottom > li:hover {
     background-color: rgba(0,0,0,0.1);
 }
+
+/* POST INDEX ITEM */
+
+.single-post-header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5px;
+}
+
+.single-post-top {
+    display: flex;
+}
+
+.single-post-user {
+    color: grey;
+    font-size: 12px;
+    line-height: 1.6;
+    padding-left: 15px;
+}
+
+.single-post-user > h2 {
+    font-size: 16px;
+    color: black;
+}
+
+.single-post-body {
+    padding: 15px 5px 0px 5px;
+    border-bottom: 1px solid grey;
+}
+
+.single-post-response {
+    display: flex;
+    justify-content: space-around;
+}
+
+.response-icon {
+    background-color: red;
+    padding: 5px 100px;
+}
