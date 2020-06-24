@@ -4,12 +4,16 @@ class SignupForm extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = { first_name: "", last_name: "", email: "", password: "", birthday: "", gender: "", month: "", day: "", year: "" };
+        const today = new Date();
+        const todayMonth = today.getMonth() + 1;
+        const todayYear = today.getFullYear() - 13;
+        this.state = { first_name: "", last_name: "", email: "", password: "", birthday: "", gender: "", month: todayMonth, day: today.getDate(), year: todayYear };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
 
     update(property){
+        debugger
         return e => this.setState({ [property] : e.currentTarget.value });
     }
 
@@ -59,7 +63,7 @@ class SignupForm extends React.Component {
                     <label className="signup-birthday">
                         <div className="signup-month">
                             <select required onChange={this.update("month")}>
-                                <option defaultValue>Month</option>
+                                <option disabled selected>Month</option>
                                 <option value="01">January</option>
                                 <option value="02">February</option>
                                 <option value="03">March</option>
@@ -76,7 +80,7 @@ class SignupForm extends React.Component {
                         </div>
                         <div className="signup-day">
                             <select required onChange={this.update("day")}>
-                                <option defaultValue >Day</option>
+                                <option disabled selected >Day</option>
                                 <option value="01">1</option>
                                 <option value="02">2</option>
                                 <option value="03">3</option>
@@ -112,7 +116,7 @@ class SignupForm extends React.Component {
                         </div>
                         <div className="signup-year">
                             <select required onChange={this.update("year")}>
-                                <option defaultValue>Year</option>
+                                <option disabled selected>Year</option>
                                 <option value="1939">1939</option>
                                 <option value="1940">1940</option>
                                 <option value="1941">1941</option>
@@ -174,6 +178,14 @@ class SignupForm extends React.Component {
                                 <option value="1997">1997</option>
                                 <option value="1998">1998</option>
                                 <option value="1999">1999</option>
+                                <option value="2000">2000</option>
+                                <option value="2001">2001</option>
+                                <option value="2002">2002</option>
+                                <option value="2003">2003</option>
+                                <option value="2004">2004</option>
+                                <option value="2005">2005</option>
+                                <option value="2006">2006</option>
+                                <option value="2007">2007</option>
                                 <option value="2008">2008</option>
                                 <option value="2009">2009</option>
                                 <option value="2010">2010</option>
