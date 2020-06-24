@@ -34,12 +34,14 @@ body {
 
 header {
    margin: 30px 230px 5px 230px;
+} /*ARGH*/
+
+a {
+   text-decoration: none;
 }
 
-
-
 nav {
-   background: rgb(102, 30, 51);
+   background: #3D5467;
 }
 
 footer {

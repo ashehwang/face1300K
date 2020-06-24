@@ -14,9 +14,7 @@ import ProfileContainer from './profile/profile_container';
 
 const App = () => (
     <div>
-        <header>
             <AuthRoute path="/" component={LogInFormContainer} />
-        </header>
             <AuthRoute path="/" component={SignupFormContainer} />
             <AuthRoute path="/" component={Footer} />
             <ProtectedRoute path = "/" component={NavBarContainer} />

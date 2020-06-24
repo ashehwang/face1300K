@@ -158,10 +158,6 @@ input:focus:invalid {
 }
 
 .login-error {
-   display: block;
-   position: fixed;
-   top: 73%;
-   right: 43%;
    padding: 20px;
    font-weight: 700;
    color: red;

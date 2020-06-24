@@ -13,7 +13,6 @@ class SignupForm extends React.Component {
     }
 
     update(property){
-        debugger
         return e => this.setState({ [property] : e.currentTarget.value });
     }
 
