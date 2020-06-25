@@ -2,8 +2,7 @@ class Api::PostsController < ApplicationController
 
     def index
         if params[:userId]
-            user = User.find_by(id: params[:userId])
-            @posts = user.posts
+            @posts = Post.where(reference_id: params[:userId])
         else
             @posts = Post.all
             render :index
@@ -17,6 +16,9 @@ class Api::PostsController < ApplicationController
     def create
         @post = Post.new(post_params)
         @post.user_id = current_user.id
+        if !@post.reference_id
+            @post.reference_id = current_user.id
+        end
         if @post.save
             render :show
         else
@@ -45,7 +47,7 @@ class Api::PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:body, :photo)
+        params.require(:post).permit(:body, :photo, :reference_id)
     end
 
 end

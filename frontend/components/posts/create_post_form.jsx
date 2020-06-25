@@ -4,7 +4,7 @@ class CreatePostForm extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { body: "" , photoFile: null, photoUrl: null };
+        this.state = { body: "" , photoFile: null, photoUrl: null, reference_id: null };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateBody = this.updateBody.bind(this);
         this.handleFile = this.handleFile.bind(this);
@@ -49,9 +49,9 @@ class CreatePostForm extends React.Component {
                     <textarea value={this.state.body} cols="50" rows="5" onChange={this.updateBody}/>
                     <input type="file" onChange={this.handleFile}/>
                     <div className="create-post-form-tab">
-                    <h3>Image Preview</h3>
-                    {preview}
-                    <input type="submit" value="Create Post" />
+                        <h3>Image Preview</h3>
+                        {preview}
+                        <input type="submit" value="Create Post" />
                     </div>
                 </form>
             </div>

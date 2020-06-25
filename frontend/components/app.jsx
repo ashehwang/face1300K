@@ -23,7 +23,7 @@ const App = () => (
             <Modal />
             <ProtectedRoute path="/" component={SplashContainer} />
             <div className="newsfeed-container">
-                <ProtectedRoute path="/" component={PostIndexContainer} />
+                <ProtectedRoute exact path="/" component={PostIndexContainer} />
                 <Route exact path="/profile/:userId" component={ProfileContainer}/>
             </div>
             <ProtectedRoute path="/" component={ContactsContainer} />  

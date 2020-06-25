@@ -23,9 +23,7 @@ class PostIndex extends React.Component {
                         <li><i className="fas fa-laugh-wink"></i>Feeling/Activity</li>
                     </ul>
                 </div>
-                <div> All my posts
-                    {posts.map(post => <PostIndexItem author={users[post.user_id]} key={post.id} post={post} deletePost={deletePost}/>)}
-                </div>
+                    {posts.reverse().map(post => <PostIndexItem author={users[post.user_id]} key={post.id} post={post} deletePost={deletePost}/>)}
             </div>
         )
     }

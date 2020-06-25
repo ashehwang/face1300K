@@ -69,7 +69,7 @@ ul.trigger-bottom > li > i {
 }
 
 .single-post-body {
-    padding: 15px 5px 0px 5px;
+    padding: 15px 5px 10px 5px;
     border-bottom: 1px solid grey;
 }
 
@@ -79,6 +79,27 @@ ul.trigger-bottom > li > i {
 }
 
 .response-icon {
-    background-color: red;
-    padding: 5px 100px;
+    border-radius: 7px;
+    padding: 8px 143px;
+    margin-top: 10px;
+}
+
+.response-icon:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.response-icon > a > i {
+    padding-right: 15px;
+}
+
+.single-post-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    padding: 10px 0;
+}
+
+.single-post-img > img {
+    max-width: 95%;
 }

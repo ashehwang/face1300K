@@ -9,7 +9,7 @@ const mSTP = (state) => ({
 const Auth = ({ component: Component, path, loggedIn, exact }) => (
     <Route path={path} exact={exact} render={(props) => (
         loggedIn ? (
-            <Redirect to="/index" />
+            <Redirect to="/" />
         ) : (
             <Component {...props} />
         )
