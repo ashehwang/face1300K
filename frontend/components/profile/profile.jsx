@@ -17,6 +17,9 @@ class Profile extends React.Component {
     
         return (
             <div className="profile-container">
+                <div className="coverpicture">
+                    <img src="https://i.ibb.co/986NN8b/1575017629323.jpg"/>                    
+                </div>
                 <h1>THIS IS FROM PROFILE OF {user.first_name}</h1>
                 {posts.map(post => <PostIndexItem author={user} post={post} key={post.id} />)}
             </div>
