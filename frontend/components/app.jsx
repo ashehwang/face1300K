@@ -27,7 +27,9 @@ const App = () => (
             </div>
             <ProtectedRoute exact path="/" component={ContactsContainer} />  
         </article>
+        <div className="profile">
             <Route exact path="/profile/:userId" component={ProfileContainer}/>
+        </div>
     </div>
 );
 

@@ -71,3 +71,9 @@ aside {
    width: 53%;
    padding: 0 20px;
 }
+
+.profile {
+   background-color: #FCEDEF;
+   width: 100%;
+   min-height: 900px;
+}

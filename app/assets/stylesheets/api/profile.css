@@ -1,7 +1,21 @@
+.profile-header {
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.profile-container > h1 {
+    font-size: 32px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 30px 0px 10px 0px;
+}
+
 .profile-container {
     width: 900px;
     margin: 0 auto;
-    background-color: lightslategray;
+    /* background-color: lightslategray; */
 }
 
 .coverpicture > img {
@@ -13,14 +27,31 @@
 }
 
 .profilepicture {
+    margin: 0 auto;
     width: 176px;
     height: 176px;
     border-radius: 88px;
-    background-color: red;
     position: relative;
+    margin-top: -168px;
+    background-color: white;
+    /* background-color: red; */
 }
 
 .profilepicture > img {
     width: 100%;
     object-fit: cover;
+    width: 176px;
+    height: 176px;
+    border-radius: 88px;
+    border: 5px solid white;
+}
+
+.profile-nav {
+    background-color: red;
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px 0;
+    margin-top: 10px;
 }

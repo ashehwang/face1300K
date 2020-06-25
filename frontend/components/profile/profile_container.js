@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 import { fetchUser } from '../../actions/user_actions';
 import { fetchUserPosts } from '../../actions/post_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => ({
     user: state.entities.users[ownProps.match.params.userId],
@@ -10,7 +11,8 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = (dispatch) => ({
     fetchUser: (userId) => dispatch(fetchUser(userId)),
-    fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId))
+    fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId)),
+    openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(mSTP, mDTP)(Profile);
