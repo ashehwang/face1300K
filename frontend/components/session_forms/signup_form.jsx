@@ -200,7 +200,7 @@ class SignupForm extends React.Component {
                         </div>
                     </label>
                     <p className="signup-label">Gender</p>
-                        <div className="signup-gender" className={`${this.props.errors["gender"] ? "error-red" : ""}`}>
+                        <div className={`${this.props.errors["gender"] ? "error-red" : ""} signup-gender`}>
                         <label>
                             <input type="radio" required name="sex" value="male" onChange={this.update("gender")} />   Male
                         </label>

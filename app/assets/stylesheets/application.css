@@ -27,7 +27,10 @@ html, body, h1, h2, h3, h4, h5, h6, div, main, nav, p, ul, ol, li, aside, articl
 
 body {
    font-family: system-ui, 'Roboto', sans-serif;
-   background-color: #545E56;
+   background-color: #826251;
+   background-color: #84DCCF;
+   background-color: #14c1c7; /*lighter #34d6ce*/
+   /* background-color: #545E56; THIS WAS MY INITIAL COLOR! */
    /* background-color: #7EBDC3; THIS WAS MY INITIAL COLOR*/
    /* padding: 50px; */
 }

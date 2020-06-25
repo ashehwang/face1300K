@@ -3,10 +3,17 @@
 
 main.signup {
    background-color: #BFD2BF;
+   background-color: #84DCCF;;
+   background-color: white;
+   background-image: linear-gradient(#F8F3F2, #ffffff);
    display: flex;
    height: 600px;
    justify-content: space-between;
+   color: #636363;
+   color: #64545A;
 }
+
+/* linear-gradient(to right,#14c1c7,#34d6ce) */
 
 .signup-intro-container {
    margin-left: 230px;
@@ -30,6 +37,8 @@ ul.signup-intro-list > li > i {
    margin-bottom: 15px;
    margin-right: 15px;
    color: #7F534B;
+   color: #14c1c7;
+   color: #34d6ce;
 }
 
 /* RIGHT SIDE */
@@ -142,6 +151,8 @@ ul.signup-intro-list > li > i {
    background-color: #003E1F;  /* COLOOOOORRRRRRRRRRRRRRRRR*/
    background-color: #59594A;
    background-color: #795C5F;
+   background-color: #14c1c7;
+   background-color: #34d6ce;
    font-weight: 700;
    color: white;
    border-radius: 4px;
