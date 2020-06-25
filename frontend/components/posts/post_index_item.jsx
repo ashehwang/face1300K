@@ -24,6 +24,7 @@ class PostIndexItem extends React.Component {
     if (!post) {
         return null;
     }
+    console.log(post)
     return (
         <div className="trigger-create-post-box">
             <div className="single-post-header">

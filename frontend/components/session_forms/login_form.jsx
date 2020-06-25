@@ -17,21 +17,21 @@ class LoginForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
-  renderErrors() {
-    if (this.props.errors) {
-      return (
-        <ul className="login-error">
-          {this.props.errors.map((error, idx) => (
-            <li  key={`error-${idx}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
-      )
-    } else {
-      return null;
-    }
-  }
+  // renderErrors() {
+  //   if (this.props.errors) {
+  //     return (
+  //       <ul className="login-error">
+  //         {this.props.errors.map((error, idx) => (
+  //           <li  key={`error-${idx}`}>
+  //             {error}
+  //           </li>
+  //         ))}
+  //       </ul>
+  //     )
+  //   } else {
+  //     return null;
+  //   }
+  // }
 
 
     render() {
@@ -39,7 +39,7 @@ class LoginForm extends React.Component {
           <header>
             <div className="login-form-container">
               <div className="mainlogo"><a href="/"><img src="https://i.ibb.co/s23rFxF/logo4.png" alt="logo" /></a></div>
-              <div className="errors-box">{this.renderErrors()}</div>
+              {/* <div className="errors-box">{this.renderErrors()}</div> */}
               <form className="login-form" onSubmit={this.handleSubmit}>
                 <div className="login-email">
                     <p className="label-login">Email or Phone</p>

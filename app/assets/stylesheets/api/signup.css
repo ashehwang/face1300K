@@ -162,3 +162,9 @@ input:focus:invalid {
    font-weight: 700;
    color: red;
 }
+
+/*ERROR TESTING*/
+.error-red {
+   border: 2px solid red !important;
+   border-radius: 4px !important;
+}

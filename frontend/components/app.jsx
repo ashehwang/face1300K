@@ -21,13 +21,13 @@ const App = () => (
             <ProtectedRoute path = "/" component={NavBarContainer} />
         <article className="function-main">
             <Modal />
-            <ProtectedRoute path="/" component={SplashContainer} />
+            <ProtectedRoute exact path="/" component={SplashContainer} />
             <div className="newsfeed-container">
                 <ProtectedRoute exact path="/" component={PostIndexContainer} />
-                <Route exact path="/profile/:userId" component={ProfileContainer}/>
             </div>
-            <ProtectedRoute path="/" component={ContactsContainer} />  
+            <ProtectedRoute exact path="/" component={ContactsContainer} />  
         </article>
+            <Route exact path="/profile/:userId" component={ProfileContainer}/>
     </div>
 );
 

@@ -4,10 +4,10 @@ class SignupForm extends React.Component {
 
     constructor(props){
         super(props);
-        const today = new Date();
-        const todayMonth = today.getMonth() + 1;
-        const todayYear = today.getFullYear() - 13;
-        this.state = { first_name: "", last_name: "", email: "", password: "", birthday: "", gender: "", month: todayMonth, day: today.getDate(), year: todayYear };
+        // const today = new Date();
+        // const todayMonth = today.getMonth() + 1;
+        // const todayYear = today.getFullYear() - 13;
+        this.state = { first_name: "", last_name: "", email: "", password: "", gender: "", month: "", day: "", year: "" };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
@@ -19,9 +19,8 @@ class SignupForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const fullBirthday = `${this.state.year}-${this.state.month}-${this.state.day}`;
-        this.setState({ "birthday": fullBirthday });
-        console.log(this.state);
-        this.props.signup(this.state);
+        const newState = Object.assign({}, this.state, { "birthday": fullBirthday });
+        this.props.signup(newState);
     }
 
     handleDemoLogin(e) {
@@ -49,17 +48,17 @@ class SignupForm extends React.Component {
                 <h4 className="signup-prop-2">It's quick and easy.</h4>
                 <form className="signup-form" onSubmit={this.handleSubmit}>
                     <div className="signup-fullname">
-                            <input type="text" required id="firstName" placeholder="First name" value={this.state.first_name} onChange={this.update("first_name")} />
-                            <input type="text" required id="lastName" placeholder="Last name" value={this.state.last_name} onChange={this.update("last_name")} />
+                            <input type="text" required id="firstName" placeholder="First name" value={this.state.first_name} onChange={this.update("first_name")} className={`${this.props.errors["first_name"] ? "error-red" : ""}`}/>
+                            <input type="text" required id="lastName" placeholder="Last name" value={this.state.last_name} onChange={this.update("last_name")} className={`${this.props.errors["last_name"] ? "error-red" : ""}`}/>
                     </div>
-                    <div className="signup-email">
-                            <input type="email" required id="email" placeholder="Mobile number or email" value={this.state.email} onChange={this.update("email")} />
+                    <div className="signup-email" >
+                            <input className={`${this.props.errors["email"] ? "error-red" : ""}`} type="email" required id="email" placeholder="Mobile number or email" value={this.state.email} onChange={this.update("email")} />
                     </div>
                     <div className="signup-password">
-                        <input type="password" required id="password" minLength="6" placeholder="New password" value={this.state.password} onChange={this.update("password")} />
+                            <input type="password" required id="password" minLength="6" placeholder="New password" value={this.state.password} onChange={this.update("password")} className={`${this.props.errors["password"] ? "error-red" : ""}`} />
                     </div>
                     <p className="signup-label">Birthday</p>
-                    <label className="signup-birthday">
+                        <label className={`signup-birthday${this.props.errors["birthday"] ? " error-red" : "" }`}>
                         <div className="signup-month">
                             <select required onChange={this.update("month")}>
                                 <option disabled selected>Month</option>
@@ -201,7 +200,7 @@ class SignupForm extends React.Component {
                         </div>
                     </label>
                     <p className="signup-label">Gender</p>
-                    <div className="signup-gender">
+                        <div className="signup-gender" className={`${this.props.errors["gender"] ? "error-red" : ""}`}>
                         <label>
                             <input type="radio" required name="sex" value="male" onChange={this.update("gender")} />   Male
                         </label>
