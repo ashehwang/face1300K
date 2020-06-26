@@ -29,8 +29,6 @@ class SignupForm extends React.Component {
         this.props.loginDemoUser();
     }
 
-
-
     render(){
 
         return(

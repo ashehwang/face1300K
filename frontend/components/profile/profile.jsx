@@ -12,6 +12,30 @@ class Profile extends React.Component {
         this.props.fetchUserPosts(this.props.match.params.userId);
     }
 
+    coverPhotoExists() {
+        if(this.props.user.coverPhotoUrl) {
+            return(
+                <img src={this.props.user.coverPhotoUrl} />
+            )
+        } else {
+            return(
+                <img src="https://i.ibb.co/986NN8b/1575017629323.jpg" />
+            )
+        }
+    }
+
+    profilePhotoExists() {
+        if(this.props.user.profilePhotoUrl) {
+            return(
+                <img src={this.props.user.profilePhotoUrl} />
+            )
+        } else {
+            return(
+                <img src="https://i.ibb.co/DRTq0KR/5cc28e190d41d2738de6.jpg" />
+            )
+        }
+    }
+
     render(){
         const { posts, user } = this.props;
     
@@ -20,10 +44,10 @@ class Profile extends React.Component {
                 <div className="profile-header">
                     <div className="profile-container">
                         <div className="coverpicture">
-                            <img src="https://i.ibb.co/986NN8b/1575017629323.jpg" />                    
+                            {this.coverPhotoExists()}                    
                         </div>
                         <div className="profilepicture">
-                            <img src="https://i.ibb.co/DRTq0KR/5cc28e190d41d2738de6.jpg" />
+                            {this.profilePhotoExists()}
                         </div>
                         <h1>{user.first_name} {user.last_name}</h1>
                         <p>{user.bio ? user.bio : "" }</p>

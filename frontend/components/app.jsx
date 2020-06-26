@@ -11,6 +11,7 @@ import Modal from './modal/modal';
 import SplashContainer from './splash/splash_container';
 import ProfileContainer from './profile/profile_container';
 import ContactsContainer from './contacts/contacts-container';
+import EditProfileContainer from './profile/edit_profile_container';
 
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
             <AuthRoute path="/" component={SignupFormContainer} />
             <AuthRoute path="/" component={Footer} />
             <ProtectedRoute path = "/" component={NavBarContainer} />
+            <Route path="/profile/:userId/edit" component={EditProfileContainer} />
         <article className="function-main">
             <Modal />
             <ProtectedRoute exact path="/" component={SplashContainer} />
