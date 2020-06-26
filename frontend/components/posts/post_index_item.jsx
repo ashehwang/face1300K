@@ -20,9 +20,15 @@ class PostIndexItem extends React.Component {
 
     render() {
         const {post, deletePost, author} = this.props;
+
     if (!post) {
         return null;
     }
+
+    if (!author) {
+        return null;
+    }
+
     console.log(post)
     return (
         <div className="trigger-create-post-box">
