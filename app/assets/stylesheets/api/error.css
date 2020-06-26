@@ -1,0 +1,32 @@
+.login-form-container {
+    position: relative;
+}
+
+.login-error-box {
+    position: absolute;
+    right: 400px;
+    top: 4px;
+    width: 173px;
+    color: white;
+    font-size: 12px;
+    background-color: #9E1E05;
+    padding: 3px;
+    border: 1px solid #621204;
+}
+
+.fa-exclamation-circle {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.email-error-box {
+    position: absolute;
+    right: 367px;
+    top: 218px;
+    width: 173px;
+    color: white;
+    font-size: 12px;
+    background-color: #9E1E05;
+    padding: 3px;
+    border: 1px solid #621204;
+}

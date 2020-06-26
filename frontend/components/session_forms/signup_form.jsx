@@ -29,6 +29,12 @@ class SignupForm extends React.Component {
         this.props.loginDemoUser();
     }
 
+    renderWarning(){
+        return(
+            <span><i className="fas fa-exclamation-circle"></i></span>
+        )
+    }
+
     render(){
 
         return(
@@ -47,7 +53,7 @@ class SignupForm extends React.Component {
                 <form className="signup-form" onSubmit={this.handleSubmit}>
                     <div className="signup-fullname">
                             <input type="text" required id="firstName" placeholder="First name" value={this.state.first_name} onChange={this.update("first_name")} className={`${this.props.errors["first_name"] ? "error-red" : ""}`}/>
-                            <input type="text" required id="lastName" placeholder="Last name" value={this.state.last_name} onChange={this.update("last_name")} className={`${this.props.errors["last_name"] ? "error-red" : ""}`}/>
+                            <input type="text" required id="lastName" placeholder="Last name" value={`${this.state.last_name}`} onChange={this.update("last_name")} className={`${this.props.errors["last_name"] ? "error-red" : ""}`}/>
                     </div>
                     <div className="signup-email" >
                             <input className={`${this.props.errors["email"] ? "error-red" : ""}`} type="email" required id="email" placeholder="Mobile number or email" value={this.state.email} onChange={this.update("email")} />
