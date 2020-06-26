@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import LogInFormContainer from './session_forms/login_form_container';
 import SignupFormContainer from './session_forms/signup_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
@@ -24,14 +24,16 @@ const App = () => (
         <article className="function-main">
             <Modal />
             <ProtectedRoute exact path="/" component={SplashContainer} />
-            <div className="newsfeed-container">
-                <ProtectedRoute exact path="/" component={PostIndexContainer} />
-            </div>
+            <ProtectedRoute exact path="/" component={PostIndexContainer} />
             <ProtectedRoute exact path="/" component={ContactsContainer} />  
         </article>
-        <div className="profile">
             <Route exact path="/profile/:userId" component={ProfileContainer}/>
-        </div>
+        <Switch>
+            <Route path="/" render={() => null}/>
+            <Route path="/profile/:userId" render={() => null}/>
+            <Route path="/profile/:userId/edit" render={() => null}/>
+            <Route render={() => <Redirect to="/" />}/>
+        </Switch>
     </div>
 );
 

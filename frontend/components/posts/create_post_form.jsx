@@ -58,14 +58,19 @@ class CreatePostForm extends React.Component {
                 </div>
                 <form onSubmit={this.handleSubmit} className="create-post-form-container">
                     <textarea value={this.state.body} cols="50" rows="5" onChange={this.updateBody}/>
-                    <div className="create-post-form-icons">
-                        <i className="fas fa-video"></i>
-                        <label htmlFor="file-upload" class="custom-file-upload"><i className="fas fa-images"></i>
-                        </label>
-                            <input type="file" onChange={this.handleFile} id="file-upload" className="hidden"/>
-                        <i className="fas fa-user-tag"></i>
-                        <i className="fas fa-map-marker-alt"></i>
-                        <i className="fas fa-ellipsis-h"></i>
+                    <div>
+                        <div>
+                            Add to Your Post
+                        </div>
+                        <div className="create-post-form-icons">
+                            <i className="fas fa-video"></i>
+                            <label htmlFor="file-upload" class="custom-file-upload"><i className="fas fa-images"></i>
+                            </label>
+                                <input type="file" onChange={this.handleFile} id="file-upload" className="hidden"/>
+                            <i className="fas fa-user-tag"></i>
+                            <i className="fas fa-map-marker-alt"></i>
+                            <i className="fas fa-ellipsis-h"></i>
+                        </div>
                     </div>
                     <div className="create-post-form-tab">
                         <h3>Image Preview</h3>

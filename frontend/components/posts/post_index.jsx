@@ -12,18 +12,20 @@ class PostIndex extends React.Component {
         const { posts, deletePost, openModal, currentUser, users } = this.props;
 
         return(
-            <div className="post-index-box">
-                <div className="trigger-create-post-box">
-                    <div className="trigger-top">
-                        <input onClick={() => openModal('createpost')} type="text" placeholder={`What's on your mind, ${currentUser.first_name}?`}/>
+            <div className="newsfeed-container">
+                <div className="post-index-box">
+                    <div className="trigger-create-post-box">
+                        <div className="trigger-top">
+                            <input onClick={() => openModal('createpost')} type="text" placeholder={`What's on your mind, ${currentUser.first_name}?`}/>
+                        </div>
+                        <ul className="trigger-bottom">
+                            <li><i className="fas fa-video"></i>Live Video</li>
+                            <li><i className="fas fa-photo-video"></i>Photo/Video</li>
+                            <li><i className="fas fa-laugh-wink"></i>Feeling/Activity</li>
+                        </ul>
                     </div>
-                    <ul className="trigger-bottom">
-                        <li><i className="fas fa-video"></i>Live Video</li>
-                        <li><i className="fas fa-photo-video"></i>Photo/Video</li>
-                        <li><i className="fas fa-laugh-wink"></i>Feeling/Activity</li>
-                    </ul>
+                        {posts.reverse().map(post => <PostIndexItem author={users[post.user_id]} key={post.id} post={post} deletePost={deletePost}/>)}
                 </div>
-                    {posts.reverse().map(post => <PostIndexItem author={users[post.user_id]} key={post.id} post={post} deletePost={deletePost}/>)}
             </div>
         )
     }

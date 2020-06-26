@@ -40,7 +40,7 @@ class Profile extends React.Component {
         const { posts, user } = this.props;
     
         return (
-            <>
+            <div className="profile">
                 <div className="profile-header">
                     <div className="profile-container">
                         <div className="coverpicture">
@@ -87,7 +87,7 @@ class Profile extends React.Component {
                     </div>
                 </div>
                         {posts.map(post => <PostIndexItem author={user} post={post} key={post.id} />)}
-            </>
+            </div>
         )
     }
 }
