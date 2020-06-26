@@ -49,7 +49,7 @@ class CreatePostForm extends React.Component {
                 </div>
                 <div className="create-post-user">
                     <div className="create-post-user-picture">
-                        <img src="" alt="pic"/>
+                        <img src="https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg" />
                     </div>
                     <div className="create-post-user-detail">
                         <p>Current User's Full Name</p>
@@ -57,7 +57,7 @@ class CreatePostForm extends React.Component {
                     </div>
                 </div>
                 <form onSubmit={this.handleSubmit} className="create-post-form-container">
-                    <textarea value={this.state.body} cols="50" rows="5" onChange={this.updateBody}/>
+                    <textarea placeholder="What's on your mind?" value={this.state.body} cols="50" rows="5" onChange={this.updateBody}/>
                     <div>
                         <div>
                             Add to Your Post

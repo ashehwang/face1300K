@@ -29,10 +29,10 @@ const App = () => (
         </article>
             <Route exact path="/profile/:userId" component={ProfileContainer}/>
         <Switch>
-            <Route path="/" render={() => null}/>
-            <Route path="/profile/:userId" render={() => null}/>
-            <Route path="/profile/:userId/edit" render={() => null}/>
-            <Route render={() => <Redirect to="/" />}/>
+            <Route path="/" render={() => null} />
+            <Route path="/profile/:userId" render={() => null} />
+            <Route path="/profile/:userId/edit" render={() => null} />
+            <Route render={() => <Redirect to="/" />} />
         </Switch>
     </div>
 );

@@ -11,6 +11,14 @@ class PostIndex extends React.Component {
     render() {
         const { posts, deletePost, openModal, currentUser, users } = this.props;
 
+        if(!users) {
+            return null;
+        }
+
+        if(!posts) {
+            return null;
+        }
+
         return(
             <div className="newsfeed-container">
                 <div className="post-index-box">

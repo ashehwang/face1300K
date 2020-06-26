@@ -10,14 +10,16 @@
 
 .modal-child {
   position: absolute;
-  top: 27%;
+  top: 37%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .create-post-box {
   width: 565px;
-  background-color: antiquewhite;
+  background-color: #424B54;
+  border-radius: 7px;
+  color: white;
 }
 
 .create-post-prop {
@@ -34,10 +36,46 @@
   left: 90%;
   font-size: 40px;
   top: 10%;
+  color: rgba(0, 0, 0, 0.25)
+}
+
+.fa-times-circle:hover {
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .create-post-user {
   display: flex;
+}
+
+.create-post-user-picture {
+
+}
+
+.create-post-user-picture > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 7px;
+  border: 2px solid white;
+}
+
+.create-post-user-detail {
+  /* background-color: red; */
+  line-height: 1.6;
+  padding: 8px;
+}
+
+.create-post-user-detail > div > i {
+  margin: 5px;
+  font-size: 16px;
+}
+.create-post-user-detail > div {
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 0 5px;
+  border-radius: 5px;
+  width: 85px;
 }
 
 .create-post-form-container > textarea {
@@ -45,6 +83,8 @@
   padding: 10px;
   width: 530px;
   margin: 7px;
+  height: 200px;
+  border-radius: 5px;
 }
 
 .hidden {
