@@ -4,7 +4,8 @@ import NavBar from './nav_bar';
 import { withRouter } from 'react-router-dom';
 
 const mSTP = (state) => ({
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    loggedIn: Boolean(state.session.id)
 });
 
 const mDTP = (dispatch) => ({

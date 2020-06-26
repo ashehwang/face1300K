@@ -12,6 +12,7 @@ import MainMenu from './main';
 
 const App = () => (
     <div>
+        <NavBarContainer />
         <Modal />
         <Switch>
             <Route path="/profile/:userId/edit" component={EditProfileContainer} />

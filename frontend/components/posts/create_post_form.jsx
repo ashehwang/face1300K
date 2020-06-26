@@ -10,6 +10,10 @@ class CreatePostForm extends React.Component {
         this.handleFile = this.handleFile.bind(this);
     }
 
+    componentDidMount(){
+        this.props.fetchUser(this.props.currentUser.id);
+    }
+
     handleSubmit(e){
         e.preventDefault();
         const formData = new FormData();
@@ -40,6 +44,8 @@ class CreatePostForm extends React.Component {
     render() {
 
         const preview = this.state.photoUrl ? <img className="pic-preview" src={this.state.photoUrl} /> : null;
+        const { currentUser } = this.props;
+        const prpUrl = currentUser.profilePhotoUrl ? currentUser.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";
 
         return(
             <div className="create-post-box">
@@ -49,22 +55,22 @@ class CreatePostForm extends React.Component {
                 </div>
                 <div className="create-post-user">
                     <div className="create-post-user-picture">
-                        <img src="https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg" />
+                        <img src={prpUrl} />
                     </div>
                     <div className="create-post-user-detail">
-                        <p>Current User's Full Name</p>
+                        <p>{currentUser.first_name} {currentUser.last_name}</p>
                         <div><i className="fas fa-globe-asia"></i>Public<i className="fas fa-sort-down"></i></div>
                     </div>
                 </div>
                 <form onSubmit={this.handleSubmit} className="create-post-form-container">
-                    <textarea placeholder="What's on your mind?" value={this.state.body} cols="50" rows="5" onChange={this.updateBody}/>
+                    <textarea placeholder={`What's on Your Mind, ${currentUser.first_name}?`} value={this.state.body} cols="50" rows="5" onChange={this.updateBody}/>
                     <div className="create-post-footer">
                         <div>
                             Add to Your Post
                         </div>
                         <div className="create-post-form-icons">
                             <i className="fas fa-video"></i>
-                            <label htmlFor="file-upload" class="custom-file-upload"><i className="fas fa-images"></i>
+                            <label htmlFor="file-upload" className="custom-file-upload"><i className="fas fa-images"></i>
                             </label>
                                 <input type="file" onChange={this.handleFile} id="file-upload" className="hidden"/>
                             <i className="fas fa-user-tag"></i>

@@ -10,6 +10,7 @@ class PostIndex extends React.Component {
 
     render() {
         const { posts, deletePost, openModal, currentUser, users } = this.props;
+        const prpUrl = currentUser.profilePhotoUrl ? currentUser.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";
 
         if(!users) {
             return null;
@@ -24,6 +25,7 @@ class PostIndex extends React.Component {
                 <div className="post-index-box">
                     <div className="trigger-create-post-box">
                         <div className="trigger-top">
+                            <img src={prpUrl} className="post-thumb"/>
                             <input onClick={() => openModal('createpost')} type="text" placeholder={`What's on your mind, ${currentUser.first_name}?`}/>
                         </div>
                         <ul className="trigger-bottom">

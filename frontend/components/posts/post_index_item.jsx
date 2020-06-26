@@ -29,11 +29,13 @@ class PostIndexItem extends React.Component {
         return null;
     }
 
+    const prpUrl = author.profilePhotoUrl ? author.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";
+
     return (
         <div className="trigger-create-post-box">
             <div className="single-post-header">
                 <div className="single-post-top">
-                    <img src="" alt="prof" />
+                    <img src={prpUrl} alt="prof" className="post-thumb" />
                     <div className="single-post-user">
                         <h2>{author.first_name} {author.last_name}</h2>
                         {post.updated_at.slice(0, 10)} at {post.updated_at.slice(11, 19)} <i className="fas fa-user-friends"></i>

@@ -11,11 +11,13 @@
 .trigger-top {
     padding-bottom: 10px;
     border-bottom: solid darkgray 1px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .trigger-top > input[type=text] {
     padding: 12px;
-    width: 90%;
+    width: 85%;
     border-radius: 16px;
     background-color: lightgray;
     opacity: 50%;
@@ -103,4 +105,10 @@ ul.trigger-bottom > li > i {
 
 .single-post-img > img {
     max-width: 95%;
+}
+
+.post-thumb {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
 }

@@ -19,6 +19,10 @@ class NavBar extends React.Component {
 
     const hidden = this.state.dropdown ? "" : "hidden";
 
+    if(!this.props.loggedIn) {
+      return null;
+    }
+
     return(
       <nav className="navbar-container">
         <div className="searchbar">
