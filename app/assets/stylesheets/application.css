@@ -77,3 +77,7 @@ aside {
    width: 100%;
    min-height: 900px;
 }
+
+button:hover, select:hover, input[type=radio]:hover, input[type=submit] {
+   cursor: pointer;
+}

@@ -160,6 +160,10 @@ ul.signup-intro-list > li > i {
    /* box-shadow: 0 3px 3px 0 black; */
 }
 
+.signup-buttons > input[type=submit]:hover {
+   background-color: #14c1c7;
+}
+
 input:invalid {
    border: 2px solid red;
 }

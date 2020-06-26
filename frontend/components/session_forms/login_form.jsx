@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
     
@@ -39,7 +40,7 @@ class LoginForm extends React.Component {
         return (
           <header>
             <div className="login-form-container">
-              <div className="mainlogo"><a href="/"><img src="https://i.ibb.co/s23rFxF/logo4.png" alt="logo" /></a></div>
+              <div className="mainlogo"><Link to="/"><img src="https://i.ibb.co/s23rFxF/logo4.png" alt="logo" /></Link></div>
               {this.renderErrors()}
               <form className="login-form" onSubmit={this.handleSubmit}>
                 <div className="login-email">
