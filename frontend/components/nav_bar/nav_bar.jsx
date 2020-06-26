@@ -5,9 +5,20 @@ class NavBar extends React.Component {
 
   constructor(props){
     super(props);
+    this.state = { dropdown: false };
+    this.handleDropdown = this.handleDropdown.bind(this);
   }
 
+  handleDropdown (e) {
+    e.preventDefault();
+    this.setState({ dropdown: !this.state.dropdown });
+  }
+  
+
   render(){
+
+    const hidden = this.state.dropdown ? "" : "hidden";
+
     return(
       <nav className="navbar-container">
         <div className="searchbar">
@@ -45,7 +56,10 @@ class NavBar extends React.Component {
             <a href="#"><i className="fas fa-bell"></i></a>
           </div>
           <div className="roundbutton">
-            <a><i className="fas fa-caret-down" onClick={this.props.logout}></i></a>
+            <a><i className="fas fa-caret-down" onClick={this.handleDropdown}></i></a>
+            <div className={`dropdown ${hidden}`}>
+              <span onClick={this.props.logout}>LogOut</span>
+            </div>
           </div >
         </div>
       </nav>

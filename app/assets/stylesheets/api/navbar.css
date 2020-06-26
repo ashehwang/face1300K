@@ -82,3 +82,17 @@ a:visited {
 .fa-home, .fa-youtube-square, .fa-laptop-house, .fa-gamepad {
     font-size: 30px;
 }
+
+.dropdown {
+    position: absolute;
+    background-color: grey;
+    top: 50px;
+}
+
+.hidden {
+    display: none;
+}
+
+.roundbutton {
+    position: relative;
+}

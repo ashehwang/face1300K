@@ -39,13 +39,13 @@ class CreatePostForm extends React.Component {
 
     render() {
 
-        const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
+        const preview = this.state.photoUrl ? <img className="pic-preview" src={this.state.photoUrl} /> : null;
 
         return(
             <div className="create-post-box">
                 <div className="create-post-prop">
                     Create Post
-                    <i className="fas fa-times-circle"></i>
+                    <i className="fas fa-times-circle" onClick={this.props.closeModal}></i>
                 </div>
                 <div className="create-post-user">
                     <div className="create-post-user-picture">
@@ -58,7 +58,7 @@ class CreatePostForm extends React.Component {
                 </div>
                 <form onSubmit={this.handleSubmit} className="create-post-form-container">
                     <textarea placeholder="What's on your mind?" value={this.state.body} cols="50" rows="5" onChange={this.updateBody}/>
-                    <div>
+                    <div className="create-post-footer">
                         <div>
                             Add to Your Post
                         </div>
@@ -72,8 +72,7 @@ class CreatePostForm extends React.Component {
                             <i className="fas fa-ellipsis-h"></i>
                         </div>
                     </div>
-                    <div className="create-post-form-tab">
-                        <h3>Image Preview</h3>
+                    <div className="create-post-preview">
                         {preview}
                     </div>
                     <div className="create-post-form-submit">

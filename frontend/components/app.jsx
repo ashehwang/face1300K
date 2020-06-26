@@ -13,13 +13,13 @@ import MainMenu from './main';
 const App = () => (
     <div>
         <Modal />
-        {/* <Switch> */}
+        <Switch>
             <Route path="/profile/:userId/edit" component={EditProfileContainer} />
             <Route path="/profile/:userId" component={ProfileContainer}/>
-            <ProtectedRoute path="/" component={MainMenu} />
+            <ProtectedRoute path="/main" component={MainMenu} />
             <AuthRoute path="/" component={Entry} />
             <Route render={() => <Redirect to="/" />} />
-        {/* </Switch> */}
+        </Switch>
     </div>
 );
 
