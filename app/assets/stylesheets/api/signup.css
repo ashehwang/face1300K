@@ -47,6 +47,7 @@ ul.signup-intro-list > li > i {
    margin-right: 230px;
    /* background: red; */
    padding-top: 22px;
+   position: relative;
 }
 .signup-form-container > h2 {
    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
@@ -183,3 +184,4 @@ input:focus:invalid {
    border: 2px solid red !important;
    border-radius: 4px !important;
 }
+

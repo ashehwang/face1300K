@@ -25,13 +25,7 @@ class LoginForm extends React.Component {
           <span><i className="fas fa-exclamation-circle"></i>  {this.props.errors["login"]}</span>
         </div>
       )
-    } else if(this.props.errors["email"]){
-      return(
-        <div className="email-error-box">
-          <span><i className="fas fa-exclamation-circle"></i>{this.props.errors["email"]}</span>
-        </div>
-      )
-    } else {
+    }  else {
       return null;
     }
   }

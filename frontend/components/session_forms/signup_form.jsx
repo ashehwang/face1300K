@@ -35,6 +35,18 @@ class SignupForm extends React.Component {
         )
     }
 
+    renderErrors() {
+        if (this.props.errors["email"]) {
+            return (
+                <div className="email-error-box">
+                    <span><i className="fas fa-exclamation-circle"></i>This email {this.props.errors["email"]}!!</span>
+                </div>
+            )
+        } else {
+            return null;
+        }
+    }
+
     render(){
 
         return(
@@ -48,6 +60,7 @@ class SignupForm extends React.Component {
                 </ul>
             </div>
             <div className="signup-form-container">
+                {this.renderErrors()}
                 <h2 className="signup-prop-1">Sign Up</h2>
                 <h4 className="signup-prop-2">It's quick and easy.</h4>
                 <form className="signup-form" onSubmit={this.handleSubmit}>
