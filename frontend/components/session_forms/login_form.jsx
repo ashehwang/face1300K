@@ -17,18 +17,6 @@ class LoginForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
-  // renderErrors() {
-  //   if (this.props.errors) {
-  //     return (
-  //       <div className="login-error">
-  //         {Object.values(this.props.errors).map((error, idx) => <span key={idx}> {error}</span>)}
-  //       </div>
-  //     )
-  //   } else {
-  //     return null;
-  //   }
-  // }
-
   renderErrors() {
     if(this.props.errors['login']){
       return(

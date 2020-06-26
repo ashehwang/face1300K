@@ -10,7 +10,43 @@
 
 .modal-child {
   position: absolute;
-  top: 50%;
+  top: 27%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.create-post-box {
+  width: 565px;
+  background-color: antiquewhite;
+}
+
+.create-post-prop {
+  position: relative;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 20px;
+  border-bottom: 1px solid grey;
+  text-align: center;
+}
+
+.fa-times-circle {
+  position: absolute;
+  left: 90%;
+  font-size: 40px;
+  top: 10%;
+}
+
+.create-post-user {
+  display: flex;
+}
+
+.create-post-form-container > textarea {
+  border: none;
+  padding: 10px;
+  width: 530px;
+  margin: 7px;
+}
+
+.hidden {
+  display: none;
 }

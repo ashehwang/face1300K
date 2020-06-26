@@ -19,6 +19,7 @@ class CreatePostForm extends React.Component {
         }
         this.props.createPhotoPost(formData);
         this.setState({ body: "" });
+        this.props.closeModal();
     }
 
     updateBody(e) {
@@ -44,13 +45,33 @@ class CreatePostForm extends React.Component {
             <div className="create-post-box">
                 <div className="create-post-prop">
                     Create Post
+                    <i className="fas fa-times-circle"></i>
                 </div>
-                <form onSubmit={this.handleSubmit}>
+                <div className="create-post-user">
+                    <div className="create-post-user-picture">
+                        <img src="" alt="pic"/>
+                    </div>
+                    <div className="create-post-user-detail">
+                        <p>Current User's Full Name</p>
+                        <div><i className="fas fa-globe-asia"></i>Public<i className="fas fa-sort-down"></i></div>
+                    </div>
+                </div>
+                <form onSubmit={this.handleSubmit} className="create-post-form-container">
                     <textarea value={this.state.body} cols="50" rows="5" onChange={this.updateBody}/>
-                    <input type="file" onChange={this.handleFile}/>
+                    <div className="create-post-form-icons">
+                        <i className="fas fa-video"></i>
+                        <label htmlFor="file-upload" class="custom-file-upload"><i className="fas fa-images"></i>
+                        </label>
+                            <input type="file" onChange={this.handleFile} id="file-upload" className="hidden"/>
+                        <i className="fas fa-user-tag"></i>
+                        <i className="fas fa-map-marker-alt"></i>
+                        <i className="fas fa-ellipsis-h"></i>
+                    </div>
                     <div className="create-post-form-tab">
                         <h3>Image Preview</h3>
                         {preview}
+                    </div>
+                    <div className="create-post-form-submit">
                         <input type="submit" value="Create Post" />
                     </div>
                 </form>
