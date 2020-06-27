@@ -36,7 +36,8 @@ body {
 }
 
 header {
-   margin: 30px 230px 5px 230px;
+   /* margin: 30px 230px 5px 230px; */
+   padding: 30px 230px 5px 230px;
 } /*ARGH*/
 
 a {

@@ -17,7 +17,8 @@ main.signup {
 /* linear-gradient(to right,#14c1c7,#34d6ce) */
 
 .signup-intro-container {
-   margin-left: 230px;
+   /* margin-left: 230px;  ---------------------------------------------------------- */
+   padding-left: 230px;
    margin-right: 80px;
 }
 
@@ -45,7 +46,8 @@ ul.signup-intro-list > li > i {
 /* RIGHT SIDE */
 
 .signup-form-container {
-   margin-right: 230px;
+   /* margin-right: 230px; ---------------------------------------------------------- */
+   padding-right: 230px;
    /* background: red; */
    padding-top: 22px;
    position: relative;
