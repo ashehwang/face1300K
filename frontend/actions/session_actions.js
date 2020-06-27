@@ -31,7 +31,7 @@ export const login = (user) => dispatch => (
     APIUtil.login(user)
         .then(user => dispatch(receiveCurrentUser(user)), 
         err => dispatch(receiveErrors(err.responseJSON)))
-); /*{email: "email already used", birthday: "need birthday"} */
+);
 
 export const logout = () => dispatch => (
     APIUtil.logout()

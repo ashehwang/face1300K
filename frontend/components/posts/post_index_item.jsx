@@ -4,6 +4,9 @@ class PostIndexItem extends React.Component {
 
     constructor(props){
         super(props);
+        this.state = { user_id: this.props.currentUser.id, post_id: this.props.post.id, body: "" };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.updateBody = this.updateBody.bind(this);
     }
 
     imgExists(){
@@ -17,6 +20,18 @@ class PostIndexItem extends React.Component {
             return null;
         }
     };
+
+    updateBody(e){
+        this.setState({ body: e.target.value });
+    }
+
+    handleSubmit(e){
+        if (e.key === "Enter") {
+            e.preventDefault();
+            this.props.createComment(this.state);
+            this.setState({ body: "" });
+        }
+    }
 
     render() {
         const {post, deletePost, author} = this.props;
@@ -54,8 +69,14 @@ class PostIndexItem extends React.Component {
                 <div className="response-icon">
                     <a><i className="far fa-comment-alt"></i>Comment</a>
                 </div>
-            </div>        
-        </div>)
+            </div>
+            <div className="single-post-comments">
+            </div>
+            <div className="single-post-create-comments">
+                <input type="text" placeholder="Write a comment" value={this.state.body} onChange={this.updateBody} onKeyDown={this.handleSubmit}/>
+            </div>       
+        </div>
+        )
     }
 }
 

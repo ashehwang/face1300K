@@ -9,7 +9,7 @@ class PostIndex extends React.Component {
     }
 
     render() {
-        const { posts, deletePost, openModal, currentUser, users } = this.props;
+        const { posts, deletePost, openModal, currentUser, users, createComment } = this.props;
         const prpUrl = currentUser.profilePhotoUrl ? currentUser.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";
 
         if(!users) {
@@ -34,7 +34,7 @@ class PostIndex extends React.Component {
                             <li><i className="fas fa-laugh-wink"></i>Feeling/Activity</li>
                         </ul>
                     </div>
-                        {posts.reverse().map(post => <PostIndexItem author={users[post.user_id]} key={post.id} post={post} deletePost={deletePost}/>)}
+                        {posts.reverse().map(post => <PostIndexItem author={users[post.user_id]} currentUser={currentUser} createComment={createComment} key={post.id} post={post} deletePost={deletePost}/>)}
                 </div>
             </div>
         )

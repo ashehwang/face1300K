@@ -37,7 +37,16 @@ class Profile extends React.Component {
     }
 
     render(){
+        
         const { posts, user } = this.props;
+
+        if (!user) {
+            return null;
+        }
+
+        if (!posts) {
+            return null;
+        }
     
         return (
             <div className="profile">
