@@ -2,9 +2,9 @@
 /* LEFT SIDE */
 
 main.signup {
-   background-color: #BFD2BF;
+   /* background-color: #BFD2BF;
    background-color: #84DCCF;;
-   background-color: white;
+   background-color: white; */
    background-image: linear-gradient(#F8F3F2, #ffffff);
    width: 100%;
    display: flex;
@@ -17,8 +17,9 @@ main.signup {
 /* linear-gradient(to right,#14c1c7,#34d6ce) */
 
 .signup-intro-container {
-   /* margin-left: 230px;  ---------------------------------------------------------- */
-   padding-left: 230px;
+   /* margin-left: 230px;  */
+   margin-left: 16.084%;
+   /* padding-left: 230px; */
    padding-right: 80px;
 }
 
@@ -46,8 +47,9 @@ ul.signup-intro-list > li > i {
 /* RIGHT SIDE */
 
 .signup-form-container {
-   /* margin-right: 230px; ---------------------------------------------------------- */
-   padding-right: 230px;
+   /* margin-right: 230px;  */
+   margin-right: 16.084%;
+   /* padding-right: 230px; */
    padding-top: 22px;
    position: relative;
 }
@@ -186,4 +188,3 @@ input:focus:invalid {
    border: 2px solid red !important;
    border-radius: 4px !important;
 }
-
