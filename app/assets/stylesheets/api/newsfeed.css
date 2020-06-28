@@ -66,9 +66,10 @@ ul.trigger-bottom > li > i {
     padding-left: 15px;
 }
 
-.single-post-user > h2 {
+.single-post-user-h2 {
     font-size: 16px;
     color: black;
+    font-weight: 600px;
 }
 
 .single-post-body {

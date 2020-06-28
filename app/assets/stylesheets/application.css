@@ -82,3 +82,11 @@ aside {
 button:hover, select:hover, input[type=radio]:hover, input[type=submit] {
    cursor: pointer;
 }
+
+textarea:focus, input:focus {
+   outline: none;
+}
+
+a:visited {
+   color: white;
+}

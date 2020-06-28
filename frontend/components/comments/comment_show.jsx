@@ -1,5 +1,6 @@
 import React from 'react'
 import { deleteComment } from '../../util/comment_api_util';
+import { Link } from 'react-router-dom';
 
 class CommentShow extends React.Component {
 
@@ -21,7 +22,7 @@ class CommentShow extends React.Component {
                 <img src={prpUrl} className="small-profile-pic"/>
                 <div className="comment-right">
                     <div className="comment-main">
-                        <h1>{comment.user.first_name} {comment.user.last_name}</h1>
+                        <Link to={`/profile/${comment.user.id}`}><h1 className="comment-main-name">{comment.user.first_name} {comment.user.last_name}</h1></Link>
                         <p>{comment.body}</p>
                     </div>
                     <div className="comment-buttons">Like &middot;<span onClick={()=> deleteComment(comment.id)}>Delete</span></div>

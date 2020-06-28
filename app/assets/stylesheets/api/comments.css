@@ -16,7 +16,7 @@ img.small-profile-pic {
     border-radius: 8px;
 }
 
-.comment-main > h1 {
+.comment-main-name {
     font-weight: 600;
     font-size: 12px
 }
@@ -53,4 +53,8 @@ img.small-profile-pic {
     border-radius: 8px;
     background-color: rgba(0,0,0,0.10);
     border: none;
+}
+
+.comment-main > a:visited {
+    color: black;
 }

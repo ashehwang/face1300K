@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentShowContainer from '../comments/comment_show_container';
+import { Link } from 'react-router-dom';
 
 class PostIndexItem extends React.Component {
 
@@ -54,7 +55,7 @@ class PostIndexItem extends React.Component {
                 <div className="single-post-top">
                     <img src={prpUrl} alt="prof" className="post-thumb" />
                     <div className="single-post-user">
-                        <h2>{author.first_name} {author.last_name}</h2>
+                        <Link to={`/profile/${author.id}`}><h2 className="single-post-user-h2">{author.first_name} {author.last_name}</h2></Link>
                         {post.updated_at.slice(0, 10)} at {post.updated_at.slice(11, 19)} <i className="fas fa-user-friends"></i>
                     </div>
                 </div>

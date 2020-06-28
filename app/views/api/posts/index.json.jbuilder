@@ -20,3 +20,10 @@ end
         end
     end
 end
+
+# payload {
+#     posts: {1: {postid1}, 2: {post2}...},
+#     comments: { 12: {} }
+# }
+
+# entities {posts: {}, comments: {} ...}

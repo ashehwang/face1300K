@@ -50,10 +50,6 @@ i.fa-facebook {
     cursor: pointer;
 }
 
-a:visited {
-    color: white;
-}
-
 .fa-plus, .fa-facebook-messenger, .fa-bell, .fa-caret-down {
     margin-top: 7px;
 }
@@ -83,10 +79,22 @@ a:visited {
     font-size: 30px;
 }
 
+
+
+/*DROPOWN MENU*/
+
+
 .dropdown {
     position: absolute;
-    background-color: grey;
-    top: 50px;
+    background-color: white;
+    top: 45px;
+    right: 10px;
+    width: 330px;
+    border-radius: 8px;
+    z-index: 1;
+    color: black;
+    padding: 15px;
+    box-shadow: 2px 2px 12px 2px rgba(135,135,135,1);
 }
 
 .hidden {
@@ -95,4 +103,80 @@ a:visited {
 
 .roundbutton {
     position: relative;
+}
+
+img.dropdown-profile-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 20px 0 5px;
+    /* border: 1px solid black; */
+}
+
+.dropdown-profile > a {
+    display: flex;
+    /* border-bottom: 1px solid grey; */
+    padding: 10px 0;
+    border-radius: 7px;
+}
+
+.dropdown-profile > a:hover {
+    background-color: rgba(0,0,0,0.1)
+}
+
+.dropdown-profile > a:visited {
+    color: black;
+}
+
+.dropdown-profile-detail > h1 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.dropdown-profile-detail > p {
+    font-size: 14px;
+    color: grey;    
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: lightgrey;
+    margin: 10px 0;
+}
+
+.dropdown-feedback, .dropdown-logout {
+    display: flex;
+    /* background-color: lightpink; */
+    padding: 5px;
+    border-radius: 7px;
+    align-items: center;
+}
+
+.dropdown-feedback:hover, .dropdown-logout:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.dropdown-feedback-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    margin-right: 15px;
+}
+
+.dropdown-feeback-text > h1, .dropdown-logout-text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.dropdown-feeback-text > p, .dropdown-terms {
+    font-size: 12px;
+    color: grey;  
 }
