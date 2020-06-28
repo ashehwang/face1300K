@@ -31,6 +31,9 @@
 
 ul.trigger-bottom > li > i {
     color: pink;
+    color: #FF9185;
+    color: #FA757A;
+    color: #4B4C58;
     display: inline-block;
     font-size: 20px;
     padding-right: 10px;
@@ -45,6 +48,7 @@ ul.trigger-bottom > li > i {
 
 .trigger-bottom > li:hover {
     background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 
 /* POST INDEX ITEM */

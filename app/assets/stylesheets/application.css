@@ -71,8 +71,7 @@ aside {
    background-color: #FDFAEC;
    background-color: #FDEDED;
    background-image: linear-gradient(#F7DEE2, #ffffff);
-   width: 23%;
-   box-sizing: border-box;
+   width: 17.5%;
    padding: 20px;
 }
 
@@ -82,7 +81,7 @@ aside {
    background-color: #FDFAEC;
    background-color: #FDEDED;
    background-image: linear-gradient(#F7DEE2, #ffffff);
-   width: 60%;
+   width: 65%;
    padding: 0 20px;
 }
 
@@ -91,7 +90,7 @@ aside {
    background-color: #FDFAEC;
    background-color: #FDEDED;
    background-image: linear-gradient(#F7DEE2, #ffffff);
-   width: 20%;
+   width: 17.5%;
 }
 
 .profile {

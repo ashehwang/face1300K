@@ -23,10 +23,10 @@ class PostIndex extends React.Component {
         return(
             <div className="newsfeed-container">
                 <div className="post-index-box">
-                    <div className="trigger-create-post-box">
+                    <div className="trigger-create-post-box" onClick={() => openModal('createpost')} >
                         <div className="trigger-top">
                             <img src={prpUrl} className="post-thumb"/>
-                            <input onClick={() => openModal('createpost')} type="text" placeholder={`What's on your mind, ${currentUser.first_name}?`}/>
+                            <input type="text" placeholder={`What's on your mind, ${currentUser.first_name}?`}/>
                         </div>
                         <ul className="trigger-bottom">
                             <li><i className="fas fa-video"></i>Live Video</li>
