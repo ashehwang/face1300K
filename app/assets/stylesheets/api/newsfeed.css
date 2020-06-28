@@ -90,6 +90,7 @@ ul.trigger-bottom > li > i {
 
 .response-icon:hover {
     background-color: rgba(0,0,0,0.1);
+    cursor: pointer !important;
 }
 
 .response-icon > a > i {

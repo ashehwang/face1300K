@@ -6,9 +6,10 @@ class PostIndexItem extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = { user_id: this.props.currentUser.id, post_id: this.props.post.id, body: "" };
+        this.state = { user_id: this.props.currentUser.id, post_id: this.props.post.id, body: "", dropdown: false };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateBody = this.updateBody.bind(this);
+        this.handleDropdown = this.handleDropdown.bind(this);
     }
 
     imgExists(){
@@ -35,6 +36,11 @@ class PostIndexItem extends React.Component {
         }
     }
 
+    handleDropdown(e) {
+        e.preventDefault();
+        this.setState({ dropdown: !this.state.dropdown });
+    }
+
     render() {
         const {post, deletePost, author, currentUser} = this.props;
 
@@ -45,7 +51,8 @@ class PostIndexItem extends React.Component {
     if (!author) {
         return null;
     }
-
+    
+    const hidden = this.state.dropdown ? "" : "hidden";
     const prpUrl = author.profilePhotoUrl ? author.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";
     const currentUserprpUrl = currentUser.profilePhotoUrl ? currentUser.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";
 
@@ -69,14 +76,14 @@ class PostIndexItem extends React.Component {
                 <div className="response-icon">
                     <a><i className="far fa-thumbs-up"></i>Like</a>
                 </div>
-                <div className="response-icon">
+                <div className="response-icon" onClick={this.handleDropdown}>
                     <a><i className="far fa-comment-alt"></i>Comment</a>
                 </div>
             </div>
             <div className="single-post-comments">
                 {post.comment_ids.map(comment_id => <CommentShowContainer key={comment_id} commentId={comment_id}/>)} 
             </div>
-            <div className="single-post-create-comments">
+            <div className={`single-post-create-comments ${hidden}`}>
                 <img src={currentUserprpUrl} className="small-profile-pic"/>
                 <input type="text" placeholder="Write a comment" value={this.state.body} onChange={this.updateBody} onKeyDown={this.handleSubmit}/>
             </div>       
