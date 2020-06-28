@@ -6,7 +6,8 @@ import { openModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => ({
     user: state.entities.users[ownProps.match.params.userId],
-    posts: Object.values(state.entities.posts)
+    posts: Object.values(state.entities.posts),
+    currentUser: state.entities.users[state.session.id]
 });
 
 const mDTP = (dispatch) => ({

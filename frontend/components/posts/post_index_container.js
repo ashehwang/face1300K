@@ -8,7 +8,8 @@ import { createComment } from '../../actions/comment_action';
 const mSTP = (state) => ({
     posts: Object.values(state.entities.posts),
     currentUser: state.entities.users[state.session.id],
-    users: state.entities.users
+    users: state.entities.users,
+    comment: state.entities.comments
 });
 
 const mDTP = (dispatch) => ({

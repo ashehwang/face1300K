@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentShowContainer from '../comments/comment_show_container';
 
 class PostIndexItem extends React.Component {
 
@@ -71,8 +72,10 @@ class PostIndexItem extends React.Component {
                 </div>
             </div>
             <div className="single-post-comments">
+                {post.comment_ids.map(comment_id => <CommentShowContainer key={comment_id} commentId={comment_id}/>)} 
             </div>
             <div className="single-post-create-comments">
+                <img src={prpUrl} className="small-profile-pic"/>
                 <input type="text" placeholder="Write a comment" value={this.state.body} onChange={this.updateBody} onKeyDown={this.handleSubmit}/>
             </div>       
         </div>

@@ -38,7 +38,7 @@ class Profile extends React.Component {
 
     render(){
         
-        const { posts, user } = this.props;
+        const { posts, user, currentUser } = this.props;
 
         if (!user) {
             return null;
@@ -95,7 +95,7 @@ class Profile extends React.Component {
                         </div>                                                                        
                     </div>
                 </div>
-                        {posts.map(post => <PostIndexItem author={user} post={post} key={post.id} />)}
+                        {posts.map(post => <PostIndexItem author={user} post={post} key={post.id} currentUser={currentUser}/>)}
             </div>
         )
     }

@@ -1,10 +1,15 @@
 class Api::PostsController < ApplicationController
 
     def index
+        all_user_ids = User.all.pluck(:id)
         if params[:userId]
             @posts = Post.where(reference_id: params[:userId])
+                        .includes(:user, comments: [:user])
+            render :index
         else
-            @posts = Post.all
+            @posts = Post.includes(:user, comments: [:user]) #USED TO BE: POST.ALL
+                        .where(user_id: all_user_ids)
+                        .order(updated_at: :desc)
             render :index
         end
     end

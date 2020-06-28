@@ -5,9 +5,9 @@ export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
 export const RECEIVE_POST_ERROR = "RECEIVE_POST_ERROR";
 
-const receiveAllPosts = (posts) => ({
+const receiveAllPosts = (payload) => ({
     type: RECEIVE_ALL_POSTS,
-    posts
+    payload: payload
 });
 
 const receivePost = (post) => ({
@@ -22,7 +22,7 @@ const removePost = (postId) => ({
 
 export const fetchPosts = () => dispatch => (
     PostApiUtil.fetchPosts()
-        .then( posts => dispatch(receiveAllPosts(posts)))
+        .then( payload => dispatch(receiveAllPosts(payload)))
 );
 
 export const fetchPost = (postId) => dispatch => (
