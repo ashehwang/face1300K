@@ -29,10 +29,16 @@ class Api::UsersController < ApplicationController
         render :show
     end
 
+    def search
+        filter = params[:filter].downcase
+        @users = User.where("LOWER(first_name) LIKE (?) OR LOWER(last_name) LIKE (?)", "%#{filter}%", "%#{filter}%")
+        render :index
+    end
+
     private
 
     def user_params
-        params.require(:user).permit(:password, :email, :first_name, :last_name, :birthday, :gender, :bio, :home_town, :current_city, :cover_photo, :profile_photo)
+        params.require(:user).permit(:password, :email, :first_name, :last_name, :birthday, :gender, :bio, :home_town, :current_city, :cover_photo, :profile_photo, :filter)
     end
     
 end
