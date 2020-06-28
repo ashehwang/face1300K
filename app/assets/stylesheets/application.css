@@ -45,7 +45,12 @@ a {
 }
 
 nav {
-   background: #3D5467;
+   background: #3D5467; /* MY INITIAL COLOR*/
+   background-color: #0D3B66;
+   background-color: #22333B;
+   background-color: #9B1C2F;
+   background-color: #4E4147;
+   background-color: #393D41;
 }
 
 footer {
@@ -61,16 +66,32 @@ article {
 }
 
 aside {
-   background-color: #826251; /*splashcontainer*/
+   background-color: #826251; /*splashcontainer*/ /* MY INITIAL COLOR BROWN*/
+   background-color: white;
+   background-color: #FDFAEC;
+   background-color: #FDEDED;
+   background-image: linear-gradient(#F7DEE2, #ffffff);
    width: 23%;
    box-sizing: border-box;
    padding: 20px;
 }
 
 .newsfeed-container {
-   background-color: #FFA69E;
-   width: 53%;
+   background-color: #FFA69E; /* MY INITIAL COLOR PINK*/
+   background-color: white;
+   background-color: #FDFAEC;
+   background-color: #FDEDED;
+   background-image: linear-gradient(#F7DEE2, #ffffff);
+   width: 60%;
    padding: 0 20px;
+}
+
+.contacts-container {
+   background-color: white;
+   background-color: #FDFAEC;
+   background-color: #FDEDED;
+   background-image: linear-gradient(#F7DEE2, #ffffff);
+   width: 20%;
 }
 
 .profile {
