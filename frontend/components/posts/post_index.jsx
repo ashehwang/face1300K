@@ -8,10 +8,6 @@ class PostIndex extends React.Component {
         this.props.fetchAllUsers();
     }
 
-    componentWillUpdate(){
-
-    }
-
     render() {
         const { posts, deletePost, openModal, currentUser, users, createComment, comments } = this.props;
         const prpUrl = currentUser.profilePhotoUrl ? currentUser.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";

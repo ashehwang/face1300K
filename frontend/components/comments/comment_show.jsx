@@ -10,7 +10,7 @@ class CommentShow extends React.Component {
     render(){
 
         const { currentUser, comment } = this.props;
-        const prp = comment.user.profilePhotoUrl ? comment.user.profilePhotoUrl : "https://i.ibb.co/DRTq0KR/5cc28e190d41d2738de6.jpg";
+        const prpUrl = comment.user.profilePhotoUrl ? comment.user.profilePhotoUrl : "https://i.ibb.co/DRTq0KR/5cc28e190d41d2738de6.jpg";
 
         if (!comment || !currentUser) {
             return null;
@@ -18,7 +18,7 @@ class CommentShow extends React.Component {
 
         return(
             <div className="comment-box-flex">
-                <img src={prp} className="small-profile-pic"/>
+                <img src={prpUrl} className="small-profile-pic"/>
                 <div className="comment-right">
                     <div className="comment-main">
                         <h1>{comment.user.first_name} {comment.user.last_name}</h1>

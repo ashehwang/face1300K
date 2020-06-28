@@ -35,7 +35,7 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
-        const {post, deletePost, author} = this.props;
+        const {post, deletePost, author, currentUser} = this.props;
 
     if (!post) {
         return null;
@@ -46,6 +46,7 @@ class PostIndexItem extends React.Component {
     }
 
     const prpUrl = author.profilePhotoUrl ? author.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";
+    const currentUserprpUrl = currentUser.profilePhotoUrl ? currentUser.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";
 
     return (
         <div className="trigger-create-post-box">
@@ -75,7 +76,7 @@ class PostIndexItem extends React.Component {
                 {post.comment_ids.map(comment_id => <CommentShowContainer key={comment_id} commentId={comment_id}/>)} 
             </div>
             <div className="single-post-create-comments">
-                <img src={prpUrl} className="small-profile-pic"/>
+                <img src={currentUserprpUrl} className="small-profile-pic"/>
                 <input type="text" placeholder="Write a comment" value={this.state.body} onChange={this.updateBody} onKeyDown={this.handleSubmit}/>
             </div>       
         </div>
