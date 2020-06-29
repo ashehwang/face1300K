@@ -5,6 +5,8 @@ class Profile extends React.Component {
 
     constructor(props) {
         super(props);
+        this.sendFriendRequest = this.sendFriendRequest.bind(this);
+        this.state = { requested: false };
     }
 
     componentDidMount(){
@@ -27,17 +29,22 @@ class Profile extends React.Component {
     isOwner(){
         if (this.props.currentUser.id === this.props.user.id) {
             return (
-                <div className="profile-nav-right" onMouseDown={() => this.props.openModal('edituser')}>
+                <div className="profile-nav-right" onClick={() => this.props.openModal('edituser')}>
                     <i className="fas fa-pencil-alt"></i> Edit Profile
                 </div>
             )
         } else {
             return(
-                <div className="profile-nav-right">
+                <div className="profile-nav-right" onClick={this.sendFriendRequest}>
                     <i className="fas fa-user-plus"></i> Add Friend
                 </div>
             )
         }
+    }
+
+    sendFriendRequest(e){
+        this.props.makeFriendRequest({ requestor_id: this.props.currentUser.id, requestee_id: this.props.user.id });
+        this.setState({ requested: true })
     }
 
     profilePhotoExists() {

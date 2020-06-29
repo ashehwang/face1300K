@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import PostIndex from './post_index';
 import { fetchPosts, deletePost } from '../../actions/post_actions';
 import { openModal } from '../../actions/modal_actions';
-import { fetchAllUsers } from '../../actions/user_actions';
+import { fetchAllUsers, fetchUser } from '../../actions/user_actions';
 import { createComment } from '../../actions/comment_action';
 
 const mSTP = (state) => ({
@@ -17,6 +17,7 @@ const mDTP = (dispatch) => ({
     deletePost: postId => dispatch(deletePost(postId)),
     openModal: modal => dispatch(openModal(modal)),
     fetchAllUsers: () => dispatch(fetchAllUsers()),
+    fetchUser: userId => dispatch(fetchUser(userId)),
     createComment: comment => dispatch(createComment(comment))
 });
 
