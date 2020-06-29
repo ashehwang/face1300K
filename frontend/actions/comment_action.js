@@ -14,9 +14,9 @@ const receiveComment = comment => ({
     comment
 });
 
-const removeComment = commentId => ({
+const removeComment = comment => ({
     type: REMOVE_COMMENT,
-    commentId
+    comment
 });
 
 export const fetchPostComments = postId => dispatch => (
@@ -37,5 +37,5 @@ export const updateComment = comment => dispatch => (
 
 export const deleteComment = commentId => dispatch => (
     CommentApiUtil.deleteComment(commentId)
-        .then(() => dispatch(removeComment(commentId)))
+        .then(comment => dispatch(removeComment(comment)))
 );

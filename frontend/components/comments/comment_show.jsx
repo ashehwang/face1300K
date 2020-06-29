@@ -1,5 +1,4 @@
 import React from 'react'
-import { deleteComment } from '../../util/comment_api_util';
 import { Link } from 'react-router-dom';
 
 class CommentShow extends React.Component {
@@ -10,7 +9,7 @@ class CommentShow extends React.Component {
 
     render(){
 
-        const { currentUser, comment } = this.props;
+        const { currentUser, comment, deleteComment } = this.props;
         const prpUrl = comment.user.profilePhotoUrl ? comment.user.profilePhotoUrl : "https://i.ibb.co/DRTq0KR/5cc28e190d41d2738de6.jpg";
 
         if (!comment || !currentUser) {
