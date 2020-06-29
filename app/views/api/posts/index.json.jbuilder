@@ -21,27 +21,17 @@ end
     end
 end
 
-# payload {
-#     posts: {1: {postid1}, 2: {post2}...},
-#     comments: { 12: {} }
-# }
+@posts.each do |post|
+    json.users do
+        json.set! post.user.id do
+            json.extract! post.user, :id, :first_name, :last_name
+            json.profilePhotoUrl url_for(post.user.profile_photo) if post.user.profile_photo.attached?
+        end
+    end
+end
 
-# entities {posts: {}, comments: {} ...}
-
-#  {
-#      user: {} //users reducer
-
-#      questions: {} // questions reducer
-
-#      answers: {} //answers reducer
-#  }
-
-#  RECEIVE_USER :
-
-#  {payload: {
-#      user: 
-
-#      questions:
-
-#      answers:
-#  }}
+# json.users do 
+#     json.set! @user.id do
+#         json.extract! @user, :id, :first_name, :last_name, :bio, :gender
+#     end
+# end

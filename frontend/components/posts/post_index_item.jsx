@@ -44,8 +44,7 @@ class PostIndexItem extends React.Component {
     abletoDelete(postId) {
         if(this.props.currentUser.id === this.props.author.id) {
             return(
-                // <i className="fas fa-ellipsis-h" onClick={() => this.props.deletePost(postId)}></i>
-                <i className="fas fa-trash-alt" onClick={() => this.props.deletePost(postId)}></i>
+                <i className="far fa-times-circle" onClick={() => this.props.deletePost(postId)}></i>
             )
         } else {
             return (
@@ -56,7 +55,7 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
-        const {post, deletePost, author, currentUser} = this.props;
+        const {post, author, currentUser} = this.props;
 
     if (!post) {
         return null;

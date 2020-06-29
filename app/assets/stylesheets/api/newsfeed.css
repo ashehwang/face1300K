@@ -127,3 +127,13 @@ i.fa-trash-alt:hover {
 i.fa-cat {
     color: white;
 }
+
+.single-post-alter .fa-times-circle {
+    font-size: 24px;
+    color: lightgrey;
+}
+
+.single-post-alter .fa-times-circle:hover {
+    color: grey;
+    cursor: pointer;
+}
