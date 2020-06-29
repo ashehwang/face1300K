@@ -82,3 +82,7 @@
 .profile-nav-right > i.fa-ellipsis-h {
     margin-right: 8px;
 }
+
+.profile-post-index {
+    padding: 5px 5px 50px 20px;
+}

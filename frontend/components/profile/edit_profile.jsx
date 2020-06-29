@@ -53,6 +53,7 @@ class EditProfile extends React.Component {
             formData.append('user[profile_photo]', this.state.profileFile)
         }
         this.props.editUser(formData, this.state.id);
+        this.props.closeModal();
     }
 
     render(){
@@ -63,7 +64,7 @@ class EditProfile extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="edit-profile-header">
                         <h1>Edit Profile</h1>
-                        <i className="far fa-times-circle"></i>
+                        <i className="far fa-times-circle" onMouseDown={this.props.closeModal}></i>
                     </div>
                     <div className="edit-profile-picture">
                         <div className="edit-2-profile-header">

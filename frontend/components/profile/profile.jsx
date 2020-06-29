@@ -113,7 +113,9 @@ class Profile extends React.Component {
                         </div>                                                                     
                     </div>
                 </div>
-                        {posts.map(post => <PostIndexItem author={user} post={post} key={post.id} currentUser={currentUser}/>)}
+                <div className="profile-post-index">
+                    {posts.map(post => <PostIndexItem author={user} post={post} key={post.id} currentUser={currentUser}/>)}
+                </div>
             </div>
         )
     }
