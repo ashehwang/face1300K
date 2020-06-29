@@ -118,3 +118,12 @@ ul.trigger-bottom > li > i {
     width: 56px;
     border-radius: 50%;
 }
+
+i.fa-trash-alt:hover {
+    color: lightgrey;
+    cursor: pointer;
+}
+
+i.fa-cat {
+    color: white;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import CreatePostFormContainer from '../posts/create_post_form_container';
+import EditProfileContainer from '../profile/edit_profile_container';
 
 function Modal({ modal, closeModal }) {
 
@@ -13,6 +14,9 @@ function Modal({ modal, closeModal }) {
     switch (modal) {
         case 'createpost':
             component = <CreatePostFormContainer />;
+            break;
+        case 'edituser':
+            component = <EditProfileContainer />;
             break;
         default:
             return null;

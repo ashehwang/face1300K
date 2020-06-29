@@ -24,6 +24,22 @@ class Profile extends React.Component {
         }
     }
 
+    isOwner(){
+        if (this.props.currentUser.id === this.props.user.id) {
+            return (
+                <div className="profile-nav-right" onMouseDown={() => this.props.openModal('edituser')}>
+                    <i className="fas fa-pencil-alt"></i> Edit Profile
+                </div>
+            )
+        } else {
+            return(
+                <div className="profile-nav-right">
+                    <i className="fas fa-user-plus"></i> Add Friend
+                </div>
+            )
+        }
+    }
+
     profilePhotoExists() {
         if(this.props.user.profilePhotoUrl) {
             return(
@@ -63,36 +79,38 @@ class Profile extends React.Component {
                         <a>Edit</a>
                     </div>
                     <div className="profile-nav">
-                        <div className="profile-nav-left">
-                            Timeline
+                        <div className="profile-nav-l">
+                            <div className="profile-nav-left">
+                                Timeline
+                            </div>
+                            <div className="profile-nav-left">
+                                About
+                            </div>
+                            <div className="profile-nav-left">
+                                Friends
+                            </div>
+                            <div className="profile-nav-left">
+                                Photos
+                            </div>
+                            <div className="profile-nav-left">
+                                Archive
+                            </div>
+                            <div className="profile-nav-left">
+                                More<i className="fas fa-sort-down"></i>
+                            </div>
                         </div>
-                        <div className="profile-nav-left">
-                            About
-                        </div>
-                        <div className="profile-nav-left">
-                            Friends
-                        </div>
-                        <div className="profile-nav-left">
-                            Photos
-                        </div>
-                        <div className="profile-nav-left">
-                            Archive
-                        </div>
-                        <div className="profile-nav-left">
-                            More<i className="fas fa-caret-down"></i>
-                        </div>
-                        <div className="profile-nav-right">
-                            <i className="fas fa-pencil-alt"></i>Edit Profile
-                        </div>
-                        <div className="profile-nav-right">
-                            <i className="fas fa-eye"></i>
-                        </div>
-                        <div className="profile-nav-right">
-                            <i className="fas fa-search"></i>
-                        </div>
-                        <div className="profile-nav-right">
-                            <i className="fas fa-ellipsis-h"></i>
-                        </div>                                                                        
+                        <div className="profile-nav-r">
+                            {this.isOwner()}
+                            <div className="profile-nav-right">
+                                <i className="fas fa-eye"></i>
+                            </div>
+                            <div className="profile-nav-right">
+                                <i className="fas fa-search"></i>
+                            </div>
+                            <div className="profile-nav-right">
+                                <i className="fas fa-ellipsis-h"></i>
+                            </div>   
+                        </div>                                                                     
                     </div>
                 </div>
                         {posts.map(post => <PostIndexItem author={user} post={post} key={post.id} currentUser={currentUser}/>)}

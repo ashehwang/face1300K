@@ -63,7 +63,7 @@ class SearchBar extends React.Component {
                 <div className="searchbar">
                     <form className="searchform">
                         <Link to="/"><i className="fab fa-facebook"></i></Link>
-                        <input type="text" placeholder="   	search &int;book" 
+                        <input type="text" placeholder="search &int;book" 
                         onChange={this.updateFilter} value={this.state.filter}
                         onFocus={(e) => this.setState({ showSearchResults: true})} 
                         onBlur={(e) => this.setState({ showSearchResults: false })}/>

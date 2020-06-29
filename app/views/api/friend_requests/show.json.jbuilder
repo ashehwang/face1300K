@@ -1,0 +1,1 @@
+json.extract! @friend_request, :requestor_id, :requestee_id, :id

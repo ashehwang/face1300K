@@ -41,6 +41,20 @@ class PostIndexItem extends React.Component {
         this.setState({ dropdown: !this.state.dropdown });
     }
 
+    abletoDelete(postId) {
+        if(this.props.currentUser.id === this.props.author.id) {
+            return(
+                // <i className="fas fa-ellipsis-h" onClick={() => this.props.deletePost(postId)}></i>
+                <i className="fas fa-trash-alt" onClick={() => this.props.deletePost(postId)}></i>
+            )
+        } else {
+            return (
+                // <i className="fas fa-ellipsis-h"></i>
+                <i className="fas fa-cat"></i>
+            )
+        }
+    }
+
     render() {
         const {post, deletePost, author, currentUser} = this.props;
 
@@ -66,7 +80,7 @@ class PostIndexItem extends React.Component {
                         {post.updated_at.slice(0, 10)} at {post.updated_at.slice(11, 19)} <i className="fas fa-user-friends"></i>
                     </div>
                 </div>
-                <div className="single-post-alter"><i className="fas fa-ellipsis-h" onClick={() => deletePost(post.id)}></i></div>
+                <div className="single-post-alter">{this.abletoDelete(post.id)}</div>
             </div>
             <div className="single-post-body">
                 {post.body}

@@ -47,11 +47,38 @@
 }
 
 .profile-nav {
-    background-color: red;
     width: 900px;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     padding: 20px 0;
     margin-top: 10px;
+    align-items: center;
+}
+
+.profile-nav-left {
+    color: grey;
+    padding: 8px 15px;
+    border-radius: 7px;
+}
+
+.profile-nav-right {
+    background-color: rgba(0,0,0,0.1);
+    padding: 8px 15px;
+    border-radius: 7px;
+    margin-left: 10px;
+}
+
+.profile-nav-right:hover, .profile-nav-left:hover {
+    background-color: rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.profile-nav-l, .profile-nav-r {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-nav-right > i.fa-ellipsis-h {
+    margin-right: 8px;
 }

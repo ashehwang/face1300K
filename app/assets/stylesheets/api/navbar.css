@@ -33,6 +33,7 @@ i.fa-facebook {
     width: 240px;
     height: 34px;
     border-radius: 17px;
+    padding-left: 10px;
 }
 
 .roundbutton {
@@ -73,6 +74,7 @@ i.fa-facebook {
 .squarebutton:hover {
     background-color: rgba(0,0,0,0.2);
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .fa-home, .fa-youtube-square, .fa-laptop-house, .fa-gamepad {

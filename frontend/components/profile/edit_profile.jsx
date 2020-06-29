@@ -11,7 +11,7 @@ class EditProfile extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchUser(this.props.match.params.userId);
+        this.props.fetchUser(this.props.user.id);
     }
 
     update(field) {
@@ -61,41 +61,43 @@ class EditProfile extends React.Component {
         return(
             <div className="edit-profile-container">
                 <form onSubmit={this.handleSubmit}>
-                    <h1>Edit Profile</h1>
-                    <i className="far fa-times-circle"></i>
+                    <div className="edit-profile-header">
+                        <h1>Edit Profile</h1>
+                        <i className="far fa-times-circle"></i>
+                    </div>
                     <div className="edit-profile-picture">
-                        <div className="profile-header">
+                        <div className="edit-2-profile-header">
                             <p>Profile Picture</p>
                             <input type="file" onChange={this.handleProfilePicture}/>
-                            <a href="#">Edit</a>
+                            <i className="fas fa-camera-retro"></i>
                         </div>
                     </div>
                     <div className="edit-cover-photo">
-                        <div className="profile-header">
+                        <div className="edit-2-profile-header">
                             <p>Cover Photo</p>
                             <input type="file" onChange={this.handleCoverPhoto} />
-                            <a href="#">Edit</a>
+                            <i className="fas fa-images"></i>
                         </div>
 
                     </div>
                     <div className="edit-bio">
-                        <div className="profile-header">
+                        <div className="edit-2-profile-header">
                             <p>Bio</p>
-                            <a href="#">Edit</a>
+                            <i className="fas fa-pen-nib"></i>
                         </div>
                         <input type="text" value={this.state.bio ? this.state.bio: ""} onChange={this.update('bio')} />
                     </div>
                     <div className="edit-current-city">
-                        <div className="profile-header">
+                        <div className="edit-2-profile-header">
                             <p>Current City</p>
-                            <a href="#">Edit</a>
+                            <i className="fas fa-city"></i>
                         </div>
                         <input type="text" value={this.state.current_city ? this.state.current_city : ""} onChange={this.update('current_city')} />
                     </div>
                     <div className="edit-home-town">
-                        <div className="profile-header">
+                        <div className="edit-2-profile-header">
                             <p>Home Town</p>
-                            <a href="#">Edit</a>
+                            <i className="fas fa-home"></i>
                         </div>
                         <input type="text" value={this.state.home_town ? this.state.home_town : ""} onChange={this.update('home_town')} />
                     </div>

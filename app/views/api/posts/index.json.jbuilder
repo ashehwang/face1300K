@@ -27,3 +27,21 @@ end
 # }
 
 # entities {posts: {}, comments: {} ...}
+
+#  {
+#      user: {} //users reducer
+
+#      questions: {} // questions reducer
+
+#      answers: {} //answers reducer
+#  }
+
+#  RECEIVE_USER :
+
+#  {payload: {
+#      user: 
+
+#      questions:
+
+#      answers:
+#  }}

@@ -12,6 +12,14 @@ class User < ApplicationRecord
     has_one_attached :profile_photo
     has_one_attached :cover_photo
 
+    has_many :sent_friend_requests,
+    foreign_key: :requestor_id,
+    class_name: :FriendRequest
+
+    has_many :received_friend_requests,
+    foreign_key: :requestee_id,
+    class_name: :FriendRequest 
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         user && user.is_password?(password) ? user : nil

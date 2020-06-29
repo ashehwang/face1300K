@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:index]
     end
     resources :comments, only: [:destroy, :update, :create]
+    resources :friend_requests, only: [:create, :destroy]
     # get "users/search", to: "users#search" 
   end
 
