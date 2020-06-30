@@ -1,5 +1,6 @@
 import React from 'react';
 import PostIndexItem from '../posts/post_index_item';
+import NavBarContainer from '../nav_bar/nav_bar_container';
 
 class Profile extends React.Component {
 
@@ -72,6 +73,8 @@ class Profile extends React.Component {
         }
     
         return (
+            <>
+            <NavBarContainer />
             <div className="profile">
                 <div className="profile-header">
                     <div className="profile-container">
@@ -124,6 +127,7 @@ class Profile extends React.Component {
                     {posts.map(post => <PostIndexItem author={user} post={post} key={post.id} currentUser={currentUser}/>)}
                 </div>
             </div>
+            </>
         )
     }
 }

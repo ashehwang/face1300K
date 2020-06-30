@@ -3,9 +3,9 @@ import * as FriendApiUtil from '../util/friend_api_util';
 export const RECEIVE_FRIEND_REQUEST = "RECEIVE_FRIEND_REQUEST";
 export const REMOVE_FRIEND_REQUEST = "REMOVE_FRIEND_REQUEST";
 
-const receiveFriendRequest = friendRequest => ({
+const receiveFriendRequest = payload => ({
     type: RECEIVE_FRIEND_REQUEST,
-    friendRequest
+    payload
 });
 
 const removeFriendRequest = friendRequestId => ({

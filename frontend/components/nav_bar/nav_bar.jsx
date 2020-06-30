@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchBarContainer from './search_bar_container';
+import FriendRequestShowContainer from './friend_request_show_container';
+import FriendRequestShow from './friend_request_show';
 
 class NavBar extends React.Component {
 
@@ -10,11 +12,31 @@ class NavBar extends React.Component {
     this.handleDropdown = this.handleDropdown.bind(this);
   }
 
+  componentDidMount(){
+    this.props.fetchUser(this.props.currentUser.id);
+  }
+
   handleDropdown (e) {
     e.preventDefault();
     this.setState({ dropdown: !this.state.dropdown });
   }
-  
+
+  hasRequest(){
+    if(!this.props.friendRequests) return null;
+
+    if(this.props.currentUser && this.props.currentUser.receivedFriendRequests.length ) {
+      return(
+        <>
+          <div className="friend-request-alert">{this.props.currentUser.receivedFriendRequests.length}</div>
+          <div className="friend-request-details">
+              {this.props.currentUser.receivedFriendRequests.map( reqId => <FriendRequestShowContainer key={reqId} friendRequest={this.props.friendRequests[reqId]}/> )}
+          </div>
+        </>
+      )
+    } else {
+      return null;
+    }
+  }
 
   render(){
     
@@ -28,12 +50,6 @@ class NavBar extends React.Component {
     return(
       <nav className="navbar-container">
         <SearchBarContainer />
-        {/* <div className="searchbar">
-          <form className="searchform">
-              <Link to="/"><i className="fab fa-facebook"></i></Link>
-            <input type="text" placeholder="   	search &int;book"/>
-          </form>
-        </div> */}
         <div className="squarebutton">
           <Link to="/"><i className="fas fa-home"></i></Link>
         </div>
@@ -60,6 +76,7 @@ class NavBar extends React.Component {
           </div>
           <div className="roundbutton">
             <a href="#"><i className="fas fa-bell"></i></a>
+            {this.hasRequest()}
           </div>
           <div className="roundbutton">
             <a><i className="fas fa-caret-down" onClick={this.handleDropdown}></i></a>

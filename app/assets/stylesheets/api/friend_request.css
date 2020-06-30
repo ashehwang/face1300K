@@ -1,0 +1,35 @@
+.friend-request-details {
+    position: absolute;
+    width: 270px;
+    top: 45px;
+    left: -190px;
+    z-index: 1;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    padding: 5px 15px 15px 15px;
+    font-size: 16px;
+}
+
+.friend-request-show-container {
+    margin-top: 10px;
+}
+
+.friend-request-buttons {
+    justify-content: space-around;
+    margin: 5px 0 0 35px;
+    
+}
+.friend-request-buttons div {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 5px 20px;
+    border-radius: 7px;
+}
+
+.friend-requestor, .friend-request-buttons {
+    display: flex;
+}
+
+.friend-requestor span {
+    font-weight: 600;
+}

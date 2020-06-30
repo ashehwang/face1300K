@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_ALL_USERS, RECEIVE_USER } from '../actions/user_actions';
 import { RECEIVE_ALL_POSTS } from '../actions/post_actions';
+import { RECEIVE_FRIEND_REQUEST } from '../actions/friend_actions';
 
 const usersReducer = (state = {}, action) => {
     
@@ -9,12 +10,13 @@ const usersReducer = (state = {}, action) => {
 
     switch(action.type){
         case RECEIVE_CURRENT_USER:
-            newState[action.currentUser.id] = action.currentUser;
-            return newState;
+            return Object.assign({}, state, action.payload.users);
         // case RECEIVE_ALL_USERS: //can get rid of
         //     return action.users;
         case RECEIVE_USER:
-            newState[action.user.id] = action.user;
+            return Object.assign({}, state, action.payload.users);
+        case RECEIVE_FRIEND_REQUEST:
+            newState[action.payload.user.id] = action.payload.user;
             return newState;
         case RECEIVE_ALL_POSTS:
             if(!action.payload.users) return state;
