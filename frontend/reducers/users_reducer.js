@@ -1,7 +1,8 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_ALL_USERS, RECEIVE_USER } from '../actions/user_actions';
 import { RECEIVE_ALL_POSTS } from '../actions/post_actions';
-import { RECEIVE_FRIEND_REQUEST } from '../actions/friend_actions';
+import { RECEIVE_FRIEND_REQUEST, REMOVE_FRIEND_REQUEST, RECEIVE_FRIEND } from '../actions/friend_actions';
+import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 
 const usersReducer = (state = {}, action) => {
     
@@ -28,9 +29,23 @@ const usersReducer = (state = {}, action) => {
                 }
             });
             return newState;
+        case REMOVE_FRIEND_REQUEST:
+            let targetIdx = newState[action.payload.friendRequest.requestee_id].receivedFriendRequests.indexOf(action.payload.friendRequest.id);
+            newState[action.payload.friendRequest.requestee_id].receivedFriendRequests.splice(targetIdx, 1);
+            return newState;
+        case RECEIVE_FRIEND:
+            newState[action.friend.user_id].friend_ids.push(action.friend.friend_id);
+            return newState;
+        case LOGOUT_CURRENT_USER:
+            return {};
         default:
             return state;
     }
 };
 
 export default usersReducer;
+
+//         case REMOVE_COMMENT:
+// let targetIdx = newState[action.comment.post_id].comment_ids.indexOf(action.comment.id);
+// newState[action.comment.post_id].comment_ids.splice(targetIdx, 1);
+// return newState;

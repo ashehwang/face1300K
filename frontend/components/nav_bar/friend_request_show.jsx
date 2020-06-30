@@ -1,9 +1,22 @@
 import React from 'react';
 
+
 class FriendRequestShow extends React.Component {
 
     constructor(props){
         super(props);
+        this.handleAccept = this.handleAccept.bind(this);
+        this.handleDecline = this.handleDecline.bind(this);
+    }
+
+    handleAccept(e){
+        this.props.deleteFriendRequest(this.props.friendRequest.id);
+        this.props.createFriend({ user_id: this.props.currentUser.id, friend_id: this.props.requestor.id });
+        this.props.createMutualFriend({ user_id: this.props.requestor.id, friend_id: this.props.currentUser.id });
+    }
+    
+    handleDecline(e){
+        this.props.deleteFriendRequest(this.props.friendRequest.id);
     }
 
     render(){
@@ -17,8 +30,8 @@ class FriendRequestShow extends React.Component {
                     <p> <span>{requestor.first_name} {requestor.last_name}</span> wants to be your friend! </p>
                 </div>
                 <div className="friend-request-buttons">
-                    <div>Accept</div>
-                    <div>Decline</div>
+                    <div onClick={this.handleAccept}>Accept</div>
+                    <div onClick={this.handleDecline}>Decline</div>
                 </div>
             </div>
         )

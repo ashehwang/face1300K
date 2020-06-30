@@ -72,12 +72,16 @@ i.fa-facebook {
 }
 
 .squarebutton:hover {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0, 0.2);
     border-radius: 10px;
     cursor: pointer;
 }
 
-.fa-home, .fa-youtube-square, .fa-laptop-house, .fa-gamepad {
+.fa-github-square, .fa-goodreads, .fa-linkedin {
+    font-size: 25px;
+}
+
+.fa-home {
     font-size: 30px;
 }
 

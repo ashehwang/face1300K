@@ -9,6 +9,11 @@
     color: black;
     padding: 5px 15px 15px 15px;
     font-size: 16px;
+    box-shadow: 2px 2px 5px 0px rgba(133,133,133,1);
+}
+
+.friend-request-details:hover {
+    cursor: default;
 }
 
 .friend-request-show-container {
@@ -24,6 +29,10 @@
     background-color: rgba(0, 0, 0, 0.1);
     padding: 5px 20px;
     border-radius: 7px;
+}
+.friend-request-buttons div:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
 
 .friend-requestor, .friend-request-buttons {

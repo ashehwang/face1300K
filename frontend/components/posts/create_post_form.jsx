@@ -11,7 +11,7 @@ class CreatePostForm extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchUser(this.props.currentUser.id);
+        // this.props.fetchUser(this.props.currentUser.id);
     }
 
     handleSubmit(e){

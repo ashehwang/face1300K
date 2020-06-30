@@ -20,6 +20,10 @@ class User < ApplicationRecord
     foreign_key: :requestee_id,
     class_name: :FriendRequest 
 
+    has_many :friends,
+    foreign_key: :friend_id,
+    class_name: :Friend
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         user && user.is_password?(password) ? user : nil

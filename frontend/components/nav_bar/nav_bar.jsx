@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchBarContainer from './search_bar_container';
 import FriendRequestShowContainer from './friend_request_show_container';
-import FriendRequestShow from './friend_request_show';
 
 class NavBar extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = { dropdown: false };
+    this.state = { dropdown: false, notification: false };
     this.handleDropdown = this.handleDropdown.bind(this);
+    this.handleNotification = this.handleNotification.bind(this);
   }
 
   componentDidMount(){
@@ -17,19 +17,23 @@ class NavBar extends React.Component {
   }
 
   handleDropdown (e) {
-    e.preventDefault();
     this.setState({ dropdown: !this.state.dropdown });
+  }
+
+  handleNotification (e) {
+    this.setState({ notification: !this.state.notification });
   }
 
   hasRequest(){
     if(!this.props.friendRequests) return null;
+    const notify = this.state.notification ? "" : "hidden";
 
     if(this.props.currentUser && this.props.currentUser.receivedFriendRequests.length ) {
       return(
         <>
           <div className="friend-request-alert">{this.props.currentUser.receivedFriendRequests.length}</div>
-          <div className="friend-request-details">
-              {this.props.currentUser.receivedFriendRequests.map( reqId => <FriendRequestShowContainer key={reqId} friendRequest={this.props.friendRequests[reqId]}/> )}
+          <div className={`friend-request-details ${notify}`}>
+              {this.props.currentUser.receivedFriendRequests.map( reqId => <FriendRequestShowContainer key={reqId} friendRequest={this.props.friendRequests[reqId]} /> )}
           </div>
         </>
       )
@@ -54,13 +58,13 @@ class NavBar extends React.Component {
           <Link to="/"><i className="fas fa-home"></i></Link>
         </div>
         <div className="squarebutton">
-          <a href="#"><i className="fab fa-youtube-square"></i></a>
+          <a href="https://github.com/ashehwang/face1300K"><i className="fab fa-github-square"></i></a>
         </div>
         <div className="squarebutton">
-          <a href="#"><i className="fas fa-laptop-house"></i></a>
+          <a href="#"><i className="fab fa-linkedin"></i></a>
         </div >
         <div className="squarebutton">
-          <a href="#"><i className="fas fa-gamepad"></i></a>
+          <a href="https://www.goodreads.com/user/show/68267127-ashe"><i className="fab fa-goodreads"></i></a>
         </div>
         <div className="navbar-right">
           <Link to={`/profile/${this.props.currentUser.id}`} >          
@@ -69,14 +73,14 @@ class NavBar extends React.Component {
               </div>
           </Link>
           <div className="roundbutton">
-            <a href="#"><i className="fas fa-plus"></i></a>
+            <a href=""><i className="fas fa-plus"></i></a>
           </div>
           <div className="roundbutton">
-            <a href="#"><i className="fab fa-facebook-messenger"></i></a>
+            <a href=""><i className="fab fa-facebook-messenger"></i></a>
           </div>
           <div className="roundbutton">
-            <a href="#"><i className="fas fa-bell"></i></a>
-            {this.hasRequest()}
+            <a><i className="fas fa-bell" onClick={this.handleNotification}></i></a>
+              {this.hasRequest()}
           </div>
           <div className="roundbutton">
             <a><i className="fas fa-caret-down" onClick={this.handleDropdown}></i></a>

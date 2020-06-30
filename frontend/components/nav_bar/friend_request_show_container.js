@@ -1,10 +1,12 @@
 import FriendRequestShow from './friend_request_show';
 import { connect } from 'react-redux';
-import { fetchUser } from '../../actions/user_actions';
+import { deleteFriendRequest, createFriend } from '../../actions/friend_actions';
+import { createMutualFriend } from '../../util/friend_api_util';
+
 
 const mSTP = (state, ownProps) => {
     if(!ownProps.friendRequest) return {};
-    
+
     return {
     friendRequest: ownProps.friendRequest,
     currentUser: state.entities.users[state.session.id],
@@ -12,7 +14,9 @@ const mSTP = (state, ownProps) => {
 }};
 
 const mDTP = dispatch => ({
-    fetchUser: userId => dispatch(fetchUser(userId))
+    deleteFriendRequest: friendRequestId => dispatch(deleteFriendRequest(friendRequestId)),
+    createFriend: friend => dispatch(createFriend(friend)),
+    createMutualFriend: friend => createMutualFriend(friend)
 });
 
 export default connect(mSTP, mDTP)(FriendRequestShow);
