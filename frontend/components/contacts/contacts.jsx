@@ -17,7 +17,7 @@ class Contacts extends React.Component {
                         Friends
                     </div>
                     <ul className="contact-lists">
-                        {currentUser.friend_ids.map(friendId => {
+                        {currentUser.friendship_ids.map(friendId => {
                             if(!users[friendId]) return null;
                             const prpUrl = users[friendId].profilePhotoUrl ? users[friendId].profilePhotoUrl : "https://i.ibb.co/DRTq0KR/5cc28e190d41d2738de6.jpg";
                         return (

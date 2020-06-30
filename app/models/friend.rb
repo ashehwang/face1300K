@@ -7,4 +7,8 @@ class Friend < ApplicationRecord
     foreign_key: :friend_id,
     class_name: :User
 
+    belongs_to :friend, #trying
+    foreign_key: :user_id,
+    class_name: :User
+
 end

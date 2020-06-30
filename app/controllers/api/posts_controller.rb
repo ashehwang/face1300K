@@ -4,7 +4,7 @@ class Api::PostsController < ApplicationController
 
     def index
         # all_user_ids = User.all.pluck(:id) #use pluck so I get an array of ids back
-        friends_ids = current_user.friend_ids
+        friends_ids = current_user.friendship_ids
         friends_ids << current_user.id
 
         if params[:userId]

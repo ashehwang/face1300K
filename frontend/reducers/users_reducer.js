@@ -34,7 +34,7 @@ const usersReducer = (state = {}, action) => {
             newState[action.payload.friendRequest.requestee_id].receivedFriendRequests.splice(targetIdx, 1);
             return newState;
         case RECEIVE_FRIEND:
-            newState[action.friend.user_id].friend_ids.push(action.friend.friend_id);
+            newState[action.friend.user_id].friendship_ids.push(action.friend.friend_id);
             return newState;
         case LOGOUT_CURRENT_USER:
             return {};
