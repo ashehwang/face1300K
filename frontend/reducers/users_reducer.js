@@ -1,7 +1,7 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_ALL_USERS, RECEIVE_USER } from '../actions/user_actions';
 import { RECEIVE_ALL_POSTS } from '../actions/post_actions';
-import { RECEIVE_FRIEND_REQUEST, REMOVE_FRIEND_REQUEST, RECEIVE_FRIEND } from '../actions/friend_actions';
+import { RECEIVE_FRIEND_REQUEST, REMOVE_FRIEND_REQUEST, RECEIVE_FRIEND, REMOVE_FRIEND } from '../actions/friend_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 
 const usersReducer = (state = {}, action) => {
@@ -44,6 +44,10 @@ const usersReducer = (state = {}, action) => {
             return newState;
         case RECEIVE_FRIEND:
             newState[action.friend.user_id].friendship_ids.push(action.friend.friend_id);
+            return newState;
+        case REMOVE_FRIEND:
+            let deleteIdx = newState[action.friend.friend_id].friendship_ids.indexOf(action.friend.user_id);
+            newState[action.friend.friend_id].friendship_ids.splice(deleteIdx, 1);
             return newState;
         case LOGOUT_CURRENT_USER:
             return {};

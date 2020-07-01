@@ -11,6 +11,12 @@ class Api::FriendRequestsController < ApplicationController
 
     def destroy
         @friend_request = FriendRequest.find(params[:id])
+        @matching_friend_request = FriendRequest.where(requestor_id: @friend_request.requestee_id).where(requestee_id: @friend_request.requestor_id)[0]
+
+        if @matching_friend_request
+            @matching_friend_request.destroy
+        end
+
         if @friend_request.destroy
             render :show
         else

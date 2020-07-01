@@ -43,7 +43,6 @@ class Profile extends React.Component {
             this.props.friends.forEach(ele => {
                 if (ele.user_id === this.props.user.id) friendId = ele.id;
             });
-            debugger
 
             return (
                 <div className="profile-nav-right" onClick={ () => this.props.deleteFriend(friendId)}>
