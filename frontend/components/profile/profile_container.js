@@ -4,6 +4,7 @@ import { fetchUser } from '../../actions/user_actions';
 import { fetchUserPosts, deletePost } from '../../actions/post_actions';
 import { openModal } from '../../actions/modal_actions';
 import { makeFriendRequest, deleteFriend } from '../../actions/friend_actions';
+import { createComment } from '../../actions/comment_action';
 
 const mSTP = (state, ownProps) => ({
     user: state.entities.users[ownProps.match.params.userId],
@@ -19,7 +20,8 @@ const mDTP = (dispatch) => ({
     openModal: (modal, referenceId) => dispatch(openModal(modal, referenceId)),
     makeFriendRequest: friendRequest => dispatch(makeFriendRequest(friendRequest)),
     deletePost: postId => dispatch(deletePost(postId)),
-    deleteFriend: friendId => dispatch(deleteFriend(friendId))
+    deleteFriend: friendId => dispatch(deleteFriend(friendId)),
+    createComment: comment => dispatch(createComment(comment))
 });
 
 export default connect(mSTP, mDTP)(Profile);

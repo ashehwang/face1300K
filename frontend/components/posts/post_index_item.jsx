@@ -1,7 +1,6 @@
 import React from 'react';
 import CommentShowContainer from '../comments/comment_show_container';
 import { Link } from 'react-router-dom';
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 class PostIndexItem extends React.Component {
 
@@ -73,7 +72,7 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
-        const {post, author, currentUser} = this.props;
+        const {post, author, currentUser } = this.props;
 
     if (!post) {
         return null;
