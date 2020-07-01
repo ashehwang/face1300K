@@ -40,3 +40,11 @@ end
 json.session do 
     json.extract! user, :id
 end
+
+json.friends do 
+    user.friends.each do |friend|
+        json.set! friend.id do
+            json.extract! friend, :id, :user_id, :friend_id
+        end
+    end
+end

@@ -35,6 +35,30 @@ class Profile extends React.Component {
         }
     }
 
+    unfriend(){
+        if (!this.props.currentUser || !this.props.user) return null;
+        if (this.props.currentUser.friendship_ids.includes(this.props.user.id)) {
+
+            let friendId;
+            this.props.friends.forEach(ele => {
+                if (ele.user_id === this.props.user.id) friendId = ele.id;
+            });
+            debugger
+
+            return (
+                <div className="profile-nav-right" onClick={ () => this.props.deleteFriend(friendId)}>
+                    <i className="fas fa-user-times"></i> Unfriend
+                </div>
+            )
+        } else {
+            return(
+                <div className="profile-nav-right">
+                    <i className="fas fa-ice-cream"></i>
+                </div>
+            )
+        }
+    }
+
     isOwner(){
         if (!this.props.currentUser || !this.props.user) return null;
 
@@ -48,6 +72,12 @@ class Profile extends React.Component {
             return(
                 <div className="profile-nav-right" >
                     <i className="fas fa-hourglass-half"></i> Friend Request sent!
+                </div>
+            )
+        } else if (this.props.currentUser.friendship_ids.includes(this.props.user.id)) {
+            return(
+                <div className="profile-nav-right">
+                    <i className="fas fa-user-check"></i> Friend
                 </div>
             )
         } else {
@@ -78,7 +108,7 @@ class Profile extends React.Component {
 
     render(){
         
-        const { posts, user, currentUser } = this.props;
+        const { posts, user, currentUser, deletePost, users } = this.props;
         if (!user || !posts) return null;
         const prpUrl = currentUser.profilePhotoUrl ? currentUser.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";
         const placeHolder = currentUser.id === user.id ? `What's on your mind, ${currentUser.first_name}?` : `Write something to ${user.first_name}...`
@@ -124,9 +154,7 @@ class Profile extends React.Component {
                             </div>
                             <div className="profile-nav-r">
                                 {this.isOwner()}
-                                <div className="profile-nav-right">
-                                    <i className="fas fa-eye"></i>
-                                </div>
+                                {this.unfriend()}
                                 <div className="profile-nav-right">
                                     <i className="fas fa-search"></i>
                                 </div>
@@ -140,7 +168,7 @@ class Profile extends React.Component {
                         <div className="profile-details">
                             <div><h1>Intro</h1></div>
                             <div><i className="fas fa-house-user"></i><span>Home Town: </span> {user.home_town}</div>
-                            <div><i className="fas fa-city"></i><span>Current City: </span> {user.current_city}</div>
+                            <div><i className="fas fa-map-marker-alt"></i><span>Current City: </span> {user.current_city}</div>
                             <div className="trigger-edit-profile" onClick={() => this.props.openModal('edituser')} ><span>Edit</span></div>
                         </div>
                         <div className="profile-walls">
@@ -158,7 +186,7 @@ class Profile extends React.Component {
                         </div>
                     </div>
                     <div className="profile-post-index">
-                        {posts.map(post => <PostIndexItem author={user} post={post} key={post.id} currentUser={currentUser}/>)}
+                        {posts.reverse().map(post => <PostIndexItem deletePost={deletePost} author={users[post.user_id]} post={post} key={post.id} currentUser={currentUser}/>)}
                     </div>
                 </div>
             </>

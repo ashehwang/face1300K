@@ -141,6 +141,10 @@
     padding-right: 8px;
 }
 
+.profile-details i.fa-house-user {
+    padding-left: 9px;
+}
+
 .profile-post-index {
     margin-top: -20px;
 }

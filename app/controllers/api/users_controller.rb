@@ -14,6 +14,13 @@ class Api::UsersController < ApplicationController
 
     def update
         @user = User.find_by(id: params[:id])
+        
+        if params[:user][:profile_photo]
+            @user.profile_photo.purge
+        elseif params[:user][:cover_photo]
+            @user.cover_photo.purge
+        end
+
         if @user.update(user_params)
             render :show
         end

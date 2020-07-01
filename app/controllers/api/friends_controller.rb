@@ -11,7 +11,8 @@ class Api::FriendsController < ApplicationController
 
     def destroy
         @friend = Friend.find(params[:id])
-        if @friend.destroy
+        @counter_friend = Friend.where(user_id: @friend.friend_id).where(friend_id: @friend.user_id)
+        if @friend.destroy && @counter_friend[0].destroy
             render :show
         else
             render json: @friend.errors.full_messages, status: 422
