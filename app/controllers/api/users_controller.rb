@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
 
-    before_action :require_login, only: [:update]
+    before_action :require_login, only: [:update, :show]
 
     def create
         @user = User.new(user_params)
@@ -26,6 +26,7 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: params[:id])
+        @current_user = current_user
         render :show
     end
 

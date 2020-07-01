@@ -15,6 +15,14 @@ class Profile extends React.Component {
         this.props.fetchUserPosts(this.props.match.params.userId);
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.user !== undefined && prevProps.user !== undefined) {
+            if (this.props.user.id !== prevProps.user.id) {
+                this.props.fetchUserPosts(this.props.match.params.userId);
+            }
+        }
+    }
+
     coverPhotoExists() {
         if(this.props.user.coverPhotoUrl) {
             return(
@@ -28,10 +36,18 @@ class Profile extends React.Component {
     }
 
     isOwner(){
+        if (!this.props.currentUser || !this.props.user) return null;
+
         if (this.props.currentUser.id === this.props.user.id) {
             return (
                 <div className="profile-nav-right" onClick={() => this.props.openModal('edituser')}>
                     <i className="fas fa-pencil-alt"></i> Edit Profile
+                </div>
+            )
+        } else if (this.props.currentUser.sentFriendRequests.includes(this.props.user.id)) {
+            return(
+                <div className="profile-nav-right" >
+                    <i className="fas fa-hourglass-half"></i> Friend Request sent!
                 </div>
             )
         } else {
@@ -63,70 +79,88 @@ class Profile extends React.Component {
     render(){
         
         const { posts, user, currentUser } = this.props;
-
-        if (!user) {
-            return null;
-        }
-
-        if (!posts) {
-            return null;
-        }
+        if (!user || !posts) return null;
+        const prpUrl = currentUser.profilePhotoUrl ? currentUser.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";
+        const placeHolder = currentUser.id === user.id ? `What's on your mind, ${currentUser.first_name}?` : `Write something to ${user.first_name}...`
+        // if (!posts) {
+        //     return null;
+        // }
     
         return (
             <>
-            <NavBarContainer />
-            <div className="profile">
-                <div className="profile-header">
-                    <div className="profile-container">
-                        <div className="coverpicture">
-                            {this.coverPhotoExists()}                    
+                <NavBarContainer />
+                <div className="profile">
+                    <div className="profile-header">
+                        <div className="profile-container">
+                            <div className="coverpicture">
+                                {this.coverPhotoExists()}                    
+                            </div>
+                            <div className="profilepicture">
+                                {this.profilePhotoExists()}
+                            </div>
+                            <h1>{user.first_name} {user.last_name}</h1>
+                            <p>{user.bio ? user.bio : "" }</p>
                         </div>
-                        <div className="profilepicture">
-                            {this.profilePhotoExists()}
+                        <div className="profile-nav">
+                            <div className="profile-nav-l">
+                                <div className="profile-nav-left">
+                                    Timeline
+                                </div>
+                                <div className="profile-nav-left">
+                                    About
+                                </div>
+                                <div className="profile-nav-left">
+                                    Friends
+                                </div>
+                                <div className="profile-nav-left">
+                                    Photos
+                                </div>
+                                <div className="profile-nav-left">
+                                    Archive
+                                </div>
+                                <div className="profile-nav-left">
+                                    More<i className="fas fa-sort-down"></i>
+                                </div>
+                            </div>
+                            <div className="profile-nav-r">
+                                {this.isOwner()}
+                                <div className="profile-nav-right">
+                                    <i className="fas fa-eye"></i>
+                                </div>
+                                <div className="profile-nav-right">
+                                    <i className="fas fa-search"></i>
+                                </div>
+                                <div className="profile-nav-right">
+                                    <i className="fas fa-ellipsis-h"></i>
+                                </div>   
+                            </div>                                                                     
                         </div>
-                        <h1>{user.first_name} {user.last_name}</h1>
-                        <p>{user.bio ? user.bio : "" }</p>
-                        <a>Edit</a>
                     </div>
-                    <div className="profile-nav">
-                        <div className="profile-nav-l">
-                            <div className="profile-nav-left">
-                                Timeline
-                            </div>
-                            <div className="profile-nav-left">
-                                About
-                            </div>
-                            <div className="profile-nav-left">
-                                Friends
-                            </div>
-                            <div className="profile-nav-left">
-                                Photos
-                            </div>
-                            <div className="profile-nav-left">
-                                Archive
-                            </div>
-                            <div className="profile-nav-left">
-                                More<i className="fas fa-sort-down"></i>
+                    <div className="profile-middle"> 
+                        <div className="profile-details">
+                            <div><h1>Intro</h1></div>
+                            <div><i className="fas fa-house-user"></i><span>Home Town: </span> {user.home_town}</div>
+                            <div><i className="fas fa-city"></i><span>Current City: </span> {user.current_city}</div>
+                            <div className="trigger-edit-profile" onClick={() => this.props.openModal('edituser')} ><span>Edit</span></div>
+                        </div>
+                        <div className="profile-walls">
+                            <div className="trigger-create-post-box" onClick={() => this.props.openModal('createpost', user.id)} >
+                                <div className="trigger-top">
+                                    <img src={prpUrl} className="post-thumb2" />
+                                    <input type="text" placeholder={placeHolder} />
+                                </div>
+                                <ul className="trigger-bottom">
+                                    <li className="wall"><i className="fas fa-video"></i>Live Video</li>
+                                    <li className="wall"><i className="fas fa-photo-video"></i>Photo/Video</li>
+                                    <li className="wall"><i className="fas fa-laugh-wink"></i>Feeling/Activity</li>
+                                </ul>
                             </div>
                         </div>
-                        <div className="profile-nav-r">
-                            {this.isOwner()}
-                            <div className="profile-nav-right">
-                                <i className="fas fa-eye"></i>
-                            </div>
-                            <div className="profile-nav-right">
-                                <i className="fas fa-search"></i>
-                            </div>
-                            <div className="profile-nav-right">
-                                <i className="fas fa-ellipsis-h"></i>
-                            </div>   
-                        </div>                                                                     
+                    </div>
+                    <div className="profile-post-index">
+                        {posts.map(post => <PostIndexItem author={user} post={post} key={post.id} currentUser={currentUser}/>)}
                     </div>
                 </div>
-                <div className="profile-post-index">
-                    {posts.map(post => <PostIndexItem author={user} post={post} key={post.id} currentUser={currentUser}/>)}
-                </div>
-            </div>
             </>
         )
     }

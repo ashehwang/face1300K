@@ -11,9 +11,9 @@ function Modal({ modal, closeModal }) {
     }
 
     let component;
-    switch (modal) {
+    switch (modal.modal) {
         case 'createpost':
-            component = <CreatePostFormContainer />;
+            component = <CreatePostFormContainer refereceId={modal.referenceId}/>;
             break;
         case 'edituser':
             component = <EditProfileContainer />;

@@ -4,8 +4,8 @@ import { createPost, createPhotoPost } from '../../actions/post_actions';
 import { closeModal } from '../../actions/modal_actions';
 import { fetchUser } from '../../actions/user_actions';
 
-const mSTP = state => ({
-    currentUser: state.entities.users[state.session.id]
+const mSTP = (state, ownProps) => ({
+    currentUser: state.entities.users[state.session.id],
 });
 
 const mDTP = (dispatch) => ({

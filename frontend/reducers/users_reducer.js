@@ -15,9 +15,18 @@ const usersReducer = (state = {}, action) => {
         // case RECEIVE_ALL_USERS: //can get rid of
         //     return action.users;
         case RECEIVE_USER:
-            return Object.assign({}, state, action.payload.users);
+            // return Object.assign({}, state, action.payload.users);
+            Object.values(action.payload.users).forEach(user => {
+                if (newState[user.id]) {
+                    newState[user.id] = Object.assign(user, newState[user.id]);
+                } else{
+                    newState[user.id] = user;
+                }
+            });
+            return newState;
         case RECEIVE_FRIEND_REQUEST:
             newState[action.payload.user.id] = action.payload.user;
+            newState[action.payload.friendRequest.requestor_id].sentFriendRequests.push(action.payload.friendRequest.requestee_id);
             return newState;
         case RECEIVE_ALL_POSTS:
             if(!action.payload.users) return state;
@@ -44,8 +53,3 @@ const usersReducer = (state = {}, action) => {
 };
 
 export default usersReducer;
-
-//         case REMOVE_COMMENT:
-// let targetIdx = newState[action.comment.post_id].comment_ids.indexOf(action.comment.id);
-// newState[action.comment.post_id].comment_ids.splice(targetIdx, 1);
-// return newState;

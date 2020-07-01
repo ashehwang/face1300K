@@ -14,7 +14,7 @@ const mSTP = (state, ownProps) => ({
 const mDTP = (dispatch) => ({
     fetchUser: (userId) => dispatch(fetchUser(userId)),
     fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId)),
-    openModal: modal => dispatch(openModal(modal)),
+    openModal: (modal, referenceId) => dispatch(openModal(modal, referenceId)),
     makeFriendRequest: friendRequest => dispatch(makeFriendRequest(friendRequest))
 });
 
