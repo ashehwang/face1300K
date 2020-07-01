@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_ALL_USERS, RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_ALL_USERS, RECEIVE_USER, RECEIVE_UPDATED_USER } from '../actions/user_actions';
 import { RECEIVE_ALL_POSTS } from '../actions/post_actions';
 import { RECEIVE_FRIEND_REQUEST, REMOVE_FRIEND_REQUEST, RECEIVE_FRIEND, REMOVE_FRIEND } from '../actions/friend_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
@@ -24,6 +24,8 @@ const usersReducer = (state = {}, action) => {
                 }
             });
             return newState;
+        case RECEIVE_UPDATED_USER:
+            return Object.assign({}, state, {[action.user.id]: action.user})
         case RECEIVE_FRIEND_REQUEST:
             newState[action.payload.user.id] = action.payload.user;
             newState[action.payload.friendRequest.requestor_id].sentFriendRequests.push(action.payload.friendRequest.requestee_id);

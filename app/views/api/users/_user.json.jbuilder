@@ -1,3 +1,4 @@
+
 json.users do 
     json.set! user.id do
         json.extract! user, :id, :first_name, :last_name, :birthday, :gender, :bio, :home_town, :current_city, :email, :friendship_ids, :friend_ids
