@@ -9,10 +9,10 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-    createPost: (post) => dispatch(createPost(post)),
+    // createPost: (post) => dispatch(createPost(post)),
     createPhotoPost: formData => dispatch(createPhotoPost(formData)),
     closeModal: () => dispatch(closeModal()),
-    fetchUser: userId => dispatch(fetchUser(userId))
+    // fetchUser: userId => dispatch(fetchUser(userId))
 });
 
 export default connect(mSTP, mDTP)(CreatePostForm);

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import CreatePostFormContainer from '../posts/create_post_form_container';
 import EditProfileContainer from '../profile/edit_profile_container';
+import EditPostFormContainer from '../posts/edit_post_form_container';
 
 function Modal({ modal, closeModal }) {
 
@@ -17,6 +18,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'edituser':
             component = <EditProfileContainer />;
+            break;
+        case 'editpost':
+            component = <EditPostFormContainer post={modal.referenceId}/>;
             break;
         default:
             return null;

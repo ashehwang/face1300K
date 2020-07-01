@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentShowContainer from '../comments/comment_show_container';
 import { Link } from 'react-router-dom';
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 class PostIndexItem extends React.Component {
 
@@ -54,6 +55,23 @@ class PostIndexItem extends React.Component {
         }
     }
 
+    abletoEdit(){
+        if (this.props.currentUser.id === this.props.author.id) {
+            if(!this.props.post) return null;
+            return(
+                <div className="response-icon" onClick={() => this.props.openModal('editpost', this.props.post )} >
+                    <a><i className="fas fa-edit"></i>Edit</a>
+                </div>
+            )
+        } else {
+            return(
+                <div className="response-icon">
+                    <a><i className="far fa-thumbs-up"></i>Like</a>
+                </div>
+            )
+        }
+    }
+
     render() {
         const {post, author, currentUser} = this.props;
 
@@ -86,9 +104,7 @@ class PostIndexItem extends React.Component {
             </div>
             {this.imgExists()}
             <div className="single-post-response">
-                <div className="response-icon">
-                    <a><i className="far fa-thumbs-up"></i>Like</a>
-                </div>
+                    {this.abletoEdit()}
                 <div className="response-icon" onClick={this.handleDropdown}>
                     <a><i className="far fa-comment-alt"></i>Comment</a>
                 </div>

@@ -1,28 +1,24 @@
 import React from 'react';
 
-class CreatePostForm extends React.Component {
+class EditPostForm extends React.Component {
 
-    constructor(props) {
+    constructor(props){
         super(props);
-        this.state = { body: "" , photoFile: null, photoUrl: null };
+        this.state = this.props.post;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateBody = this.updateBody.bind(this);
         this.handleFile = this.handleFile.bind(this);
     }
 
-    componentDidMount(){
-        // this.props.fetchUser(this.props.currentUser.id);
-    }
-
-    handleSubmit(e){
+    handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
         formData.append('post[body]', this.state.body);
-        formData.append('post[reference_id]', this.props.referenceId);
+        formData.append('post[reference_id]', this.state.referenceId);
         if (this.state.photoFile) {
             formData.append('post[photo]', this.state.photoFile);
         }
-        this.props.createPhotoPost(formData);
+        this.props.updatePost(formData, this.state.id);
         this.setState({ body: "" });
         this.props.closeModal();
     }
@@ -48,10 +44,10 @@ class CreatePostForm extends React.Component {
         const { currentUser } = this.props;
         const prpUrl = currentUser.profilePhotoUrl ? currentUser.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";
 
-        return(
+        return (
             <div className="create-post-box">
                 <div className="create-post-prop">
-                    Create Post
+                    Edit Post
                     <i className="fas fa-times-circle" onClick={this.props.closeModal}></i>
                 </div>
                 <div className="create-post-user">
@@ -64,7 +60,7 @@ class CreatePostForm extends React.Component {
                     </div>
                 </div>
                 <form onSubmit={this.handleSubmit} className="create-post-form-container">
-                    <textarea placeholder={`What's on Your Mind, ${currentUser.first_name}?`} value={this.state.body} cols="50" rows="5" onChange={this.updateBody}/>
+                    <textarea value={this.state.body} cols="50" rows="5" onChange={this.updateBody} />
                     <div className="create-post-footer">
                         <div>
                             Add to Your Post
@@ -73,7 +69,7 @@ class CreatePostForm extends React.Component {
                             <i className="fas fa-video"></i>
                             <label htmlFor="file-upload" className="custom-file-upload"><i className="fas fa-images"></i>
                             </label>
-                                <input type="file" onChange={this.handleFile} id="file-upload" className="hidden"/>
+                            <input type="file" onChange={this.handleFile} id="file-upload" className="hidden" />
                             <i className="fas fa-user-tag"></i>
                             <i className="fas fa-map-marker-alt"></i>
                             <i className="fas fa-ellipsis-h"></i>
@@ -83,13 +79,12 @@ class CreatePostForm extends React.Component {
                         {preview}
                     </div>
                     <div className="create-post-form-submit">
-                        <input type="submit" value="Create Post" />
+                        <input type="submit" value="Edit Post" />
                     </div>
                 </form>
             </div>
         )
     }
-
 }
 
-export default CreatePostForm;
+export default EditPostForm;
