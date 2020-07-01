@@ -14,7 +14,7 @@ const mSTP = (state) => ({
 const mDTP = (dispatch) => ({
     fetchPosts: () => dispatch(fetchPosts()),
     deletePost: postId => dispatch(deletePost(postId)),
-    openModal: modal => dispatch(openModal(modal)),
+    openModal: (modal, referenceId) => dispatch(openModal(modal, referenceId)),
     createComment: comment => dispatch(createComment(comment))
 });
 

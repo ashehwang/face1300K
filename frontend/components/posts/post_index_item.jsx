@@ -37,7 +37,7 @@ class PostIndexItem extends React.Component {
     }
 
     handleDropdown(e) {
-        e.preventDefault();
+        // e.preventDefault();
         this.setState({ dropdown: !this.state.dropdown });
     }
 

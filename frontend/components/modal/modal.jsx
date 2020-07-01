@@ -13,7 +13,7 @@ function Modal({ modal, closeModal }) {
     let component;
     switch (modal.modal) {
         case 'createpost':
-            component = <CreatePostFormContainer refereceId={modal.referenceId}/>;
+            component = <CreatePostFormContainer referenceId={modal.referenceId}/>;
             break;
         case 'edituser':
             component = <EditProfileContainer />;

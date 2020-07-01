@@ -4,7 +4,7 @@ class CreatePostForm extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { body: "" , photoFile: null, photoUrl: null, reference_id: null };
+        this.state = { body: "" , photoFile: null, photoUrl: null };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateBody = this.updateBody.bind(this);
         this.handleFile = this.handleFile.bind(this);
@@ -15,10 +15,11 @@ class CreatePostForm extends React.Component {
     }
 
     handleSubmit(e){
-        debugger
         e.preventDefault();
         const formData = new FormData();
+        debugger
         formData.append('post[body]', this.state.body);
+        formData.append('post[reference_id]', this.props.referenceId);
         if (this.state.photoFile) {
             formData.append('post[photo]', this.state.photoFile);
         }

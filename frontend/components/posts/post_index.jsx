@@ -22,7 +22,7 @@ class PostIndex extends React.Component {
         return(
             <div className="newsfeed-container">
                 <div className="post-index-box">
-                    <div className="trigger-create-post-box" onClick={() => openModal('createpost')} >
+                    <div className="trigger-create-post-box" onClick={() => openModal('createpost', currentUser.id)} >
                         <div className="trigger-top">
                             <img src={prpUrl} className="post-thumb"/>
                             <input type="text" placeholder={`What's on your mind, ${currentUser.first_name}?`}/>
