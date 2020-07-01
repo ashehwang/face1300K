@@ -25,5 +25,5 @@ export const fetchUser = userId => dispatch => (
 
 export const editUser = (formData, userId) => dispatch => (
     UserApiUtil.editUser(formData, userId)
-        .then(user => dispatch(receiveUser(user)))
-)
+        .then(payload => dispatch(receiveUser(payload)))
+);
