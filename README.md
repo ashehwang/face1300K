@@ -1,24 +1,25 @@
-# README
+# functionbook
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+functionbook, a facebook clone, is a social media website that allows users to share snippets of their life with people they care.
+___
 
-Things you may want to cover:
+## Tools Utilized
 
-* Ruby version
+* Ruby on Rails
+* JavaScript
+* jBuilder
+* PostgreSQL
+* React
+* Redux
+* Amazon WEb Services S3
 
-* System dependencies
+## Demo
 
-* Configuration
+[functionbook live](functionbook.herokuapp.com)
 
-* Database creation
+## Features
 
-* Database initialization
+![Users can signup as a new user or log in as an existing user.](https://i.ibb.co/cg7xG0W/Screen-Shot-2020-07-02-at-9-53-17-AM.png "showcase")
+<a href="https://ibb.co/cg7xG0W"><img src="https://i.ibb.co/cg7xG0W/Screen-Shot-2020-07-02-at-9-53-17-AM.png" alt="Screen-Shot-2020-07-02-at-9-53-17-AM" border="0"></a>
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<img src="https://i.ibb.co/cg7xG0W/Screen-Shot-2020-07-02-at-9-53-17-AM.png" alt="Screen-Shot-2020-07-02-at-9-53-17-AM" border="0">
