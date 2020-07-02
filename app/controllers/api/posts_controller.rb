@@ -3,11 +3,11 @@ class Api::PostsController < ApplicationController
     before_action :require_login, only: [:index]
 
     def index
-        
+
         friends_ids = current_user.friendship_ids
         friends_ids << current_user.id
 
-        if params[:userId]
+        if params[:userId] 
             @posts = Post.where(reference_id: params[:userId])
                         .includes(:user, comments: [:user]) #reduce N+1 query
             render :index
