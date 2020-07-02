@@ -4,9 +4,6 @@ class SignupForm extends React.Component {
 
     constructor(props){
         super(props);
-        // const today = new Date();
-        // const todayMonth = today.getMonth() + 1;
-        // const todayYear = today.getFullYear() - 13;
         this.state = { first_name: "", last_name: "", email: "", password: "", gender: "", month: "", day: "", year: "" };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);

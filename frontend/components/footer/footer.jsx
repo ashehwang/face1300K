@@ -7,7 +7,7 @@ const Footer = () => (
             <a href="#">LinkeIn</a>
             <a href="#">Angelist</a>
         </div>
-        functionbook &copy; 2020 by Ashe Hwang
+        functionbook &copy; 2020 by Ashe HyeRin Hwang
     </footer>
 )
 

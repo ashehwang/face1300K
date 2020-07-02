@@ -10,10 +10,6 @@ class CreatePostForm extends React.Component {
         this.handleFile = this.handleFile.bind(this);
     }
 
-    componentDidMount(){
-        // this.props.fetchUser(this.props.currentUser.id);
-    }
-
     handleSubmit(e){
         e.preventDefault();
         const formData = new FormData();

@@ -12,10 +12,7 @@ const usersReducer = (state = {}, action) => {
     switch(action.type){
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, action.payload.users);
-        // case RECEIVE_ALL_USERS: //can get rid of
-        //     return action.users;
         case RECEIVE_USER:
-            // return Object.assign({}, state, action.payload.users);
             Object.values(action.payload.users).forEach(user => {
                 if (newState[user.id]) {
                     newState[user.id] = Object.assign(user, newState[user.id]);

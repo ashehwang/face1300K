@@ -111,9 +111,6 @@ class Profile extends React.Component {
         if (!user || !posts) return null;
         const prpUrl = currentUser.profilePhotoUrl ? currentUser.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";
         const placeHolder = currentUser.id === user.id ? `What's on your mind, ${currentUser.first_name}?` : `Write something to ${user.first_name}...`
-        // if (!posts) {
-        //     return null;
-        // }
     
         return (
             <>

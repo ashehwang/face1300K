@@ -37,7 +37,6 @@ class PostIndexItem extends React.Component {
     }
 
     handleDropdown(e) {
-        // e.preventDefault();
         this.setState({ dropdown: !this.state.dropdown });
     }
 
@@ -47,10 +46,7 @@ class PostIndexItem extends React.Component {
                 <i className="far fa-times-circle" onClick={() => this.props.deletePost(postId)}></i>
             )
         } else {
-            return (
-                // <i className="fas fa-ellipsis-h"></i>
-                <i className="fas fa-cat"></i>
-            )
+            return (<i className="fas fa-cat"></i>)
         }
     }
 

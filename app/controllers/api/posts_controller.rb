@@ -3,7 +3,7 @@ class Api::PostsController < ApplicationController
     before_action :require_login, only: [:index]
 
     def index
-        # all_user_ids = User.all.pluck(:id) #use pluck so I get an array of ids back
+        
         friends_ids = current_user.friendship_ids
         friends_ids << current_user.id
 
@@ -12,7 +12,7 @@ class Api::PostsController < ApplicationController
                         .includes(:user, comments: [:user]) #reduce N+1 query
             render :index
         else
-            @posts = Post.includes(:user, comments: [:user]) #USED TO BE: POST.ALL
+            @posts = Post.includes(:user, comments: [:user]) 
                         .where(user_id: friends_ids)
                         .order(updated_at: :desc)
             @user = current_user
