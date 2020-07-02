@@ -24,7 +24,7 @@ ___
 Users can sign up with a unique email, or log in as an existing user.
 
 
-<img src="https://i.ibb.co/TT1mP7r/sn.png" alt="sn" border="0">
+<img src="https://i.ibb.co/71CQN0L/sn9.png" alt="sn9" border="0">
 
 Users have their own profile page, edit their profile picture, cover picture and details to be shown.
 
@@ -42,3 +42,9 @@ Users are able to search for other users to send friend request to.
 <img src="https://i.ibb.co/dtyf7dm/sn2.png" alt="sn2" border="0">
 
 If you receive friend requests it'll show up in notification for you to be alerted.
+
+## Future Design Directions
+
+* Likes
+* Messenger system
+* Photo albums
