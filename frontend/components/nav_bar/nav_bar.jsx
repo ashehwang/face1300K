@@ -61,7 +61,7 @@ class NavBar extends React.Component {
           <a href="https://github.com/ashehwang/face1300K"><i className="fab fa-github-square"></i></a>
         </div>
         <div className="squarebutton">
-          <a href="#"><i className="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/ashe-hyerin-hwang-ba1814104/"><i className="fab fa-linkedin"></i></a>
         </div >
         <div className="squarebutton">
           <a href="https://www.goodreads.com/user/show/68267127-ashe"><i className="fab fa-goodreads"></i></a>
