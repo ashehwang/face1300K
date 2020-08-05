@@ -86,7 +86,7 @@ aside {
    background-image: linear-gradient(#AED1D6, #ffffff);
    width: 70%;
    padding: 0 20px;
-   min-height: 86vh;
+   min-height: 100vh;
 }
 
 .contacts-container {
@@ -96,7 +96,7 @@ aside {
    background-image: linear-gradient(#F7DEE2, #ffffff);
    background-image: linear-gradient(#AED1D6, #ffffff);
    width: 17%;
-      min-height: 86vh;
+      min-height: 100vh;
 }
 
 .profile {
