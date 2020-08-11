@@ -93,9 +93,7 @@ json.friends do
         end
     end
 end
-```
 
-```ruby
 
     def index
 
@@ -114,7 +112,8 @@ end
             render :index
         end
     end
-    ```
+    
+```
 
 
 All necessary information is pulled with extensive jbuilder with one single request minimizing the number of backend calls.
