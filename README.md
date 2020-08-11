@@ -43,6 +43,12 @@ Users are able to search for other users to send friend request to.
 
 If you receive friend requests it'll show up in notification for you to be alerted.
 
+
+<img src="https://i.ibb.co/bvcH9CX/Screen-Shot-2020-08-11-at-3-32-11-PM.png" alt="Screen-Shot-2020-08-11-at-3-32-11-PM" border="0">
+
+
+All necessary information is pulled with extensive jbuilder with one single request minimizing the number of backend calls.
+
 ## Future Design Directions
 
 * Likes
