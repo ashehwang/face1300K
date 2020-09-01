@@ -55,4 +55,20 @@ export const createPhotoPost = formData => (
         contentType: false,
         processData: false
     })
-)
+);
+
+export const likePost = postLike => (
+    $.ajax({
+        method: "POST",
+        url: `/api/posts/${postLike.comment_id}/like`,
+        data: { postLike }
+    })
+);
+
+export const unlikePost = postLike => (
+    $.ajax({
+        method: "POST",
+        url: `/api/posts/${postLike.comment_id}/unlike`,
+        data: { postLike }
+    })
+);

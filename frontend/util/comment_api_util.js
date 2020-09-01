@@ -27,3 +27,19 @@ export const updateComment = comment => (
         data: { comment }
     })
 );
+
+export const likeComment = commentLike => (
+    $.ajax({
+        method: "POST",
+        url: `/api/comments/${commentLike.comment_id}/like`,
+        data: { commentLike }
+    })
+);
+
+export const unlikeComment = commentLike => (
+    $.ajax({
+        method: "POST",
+        url: `/api/comments/${commentLike.comment_id}/unlike`,
+        data: { commentLike }
+    })
+);
