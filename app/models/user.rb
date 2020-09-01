@@ -28,6 +28,18 @@ class User < ApplicationRecord
     through: :friends,
     source: :friend
 
+    has_many :likes
+
+    has_may :liked_comments,
+    through: :likes,
+    source: :likeable,
+    source_type: "Comment"
+
+    has_many :liked_posts,
+    through: :likes,
+    source: :likeable,
+    source_type: "Post"
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         user && user.is_password?(password) ? user : nil
