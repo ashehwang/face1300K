@@ -22,15 +22,15 @@ const removePost = (postId) => ({
     postId
 });
 
-const receivePostLike = (like) => ({
-    type: LIKE_POST,
-    like
-});
+// const receivePostLike = (like) => ({
+//     type: LIKE_POST,
+//     like
+// });
 
-const receivePostUnlike = (likeId) => ({
-    type: UNLIKE_POST,
-    likeId
-});
+// const receivePostUnlike = (likeId) => ({
+//     type: UNLIKE_POST,
+//     likeId
+// });
 
 export const fetchPosts = () => dispatch => (
     PostApiUtil.fetchPosts()
@@ -69,10 +69,10 @@ export const createPhotoPost = (formData) => dispatch => (
 
 export const likePost = (postLike) => dispatch => (
     PostApiUtil.likePost(postLike)
-        .then (postLike => dispatch(receivePostLike(postLike)))
+        .then (post => dispatch(receivePost(post)))
 );
 
-export const unlikePost = (likeId) => dispatch => (
-    PostApiUtil.likePost(likeId)
-        .then(likeId => dispatch(receivePostUnlike(likeId)))
+export const unlikePost = (postLike) => dispatch => (
+    PostApiUtil.unlikePost(postLike)
+        .then(post => dispatch(receivePost(post)))
 );

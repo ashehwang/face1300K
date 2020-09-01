@@ -137,3 +137,7 @@ i.fa-cat {
     color: grey;
     cursor: pointer;
 }
+
+.liked {
+    color: #558c94;
+}

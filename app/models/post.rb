@@ -11,5 +11,9 @@ class Post < ApplicationRecord
     has_many :likes,
     as: :likeable,
     dependent: :destroy
-    
+
+    has_many :liked_users,
+    through: :likes,
+    source: :user
+
 end

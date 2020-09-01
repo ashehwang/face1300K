@@ -64,10 +64,9 @@ export const likePost = postLike => (
     })
 );
 
-export const unlikePost = likeId => (
+export const unlikePost = postLike => (
     $.ajax({
         method: "POST",
-        url: `/api/posts/${likeId}/unlike`,
-        data: { postLike }
+        url: `/api/posts/${postLike.id}/unlike`
     })
 );
