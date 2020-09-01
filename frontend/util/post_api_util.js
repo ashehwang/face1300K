@@ -60,15 +60,14 @@ export const createPhotoPost = formData => (
 export const likePost = postLike => (
     $.ajax({
         method: "POST",
-        url: `/api/posts/${postLike.comment_id}/like`,
-        data: { postLike }
+        url: `/api/posts/${postLike.id}/like`
     })
 );
 
-export const unlikePost = postLike => (
+export const unlikePost = likeId => (
     $.ajax({
         method: "POST",
-        url: `/api/posts/${postLike.comment_id}/unlike`,
+        url: `/api/posts/${likeId}/unlike`,
         data: { postLike }
     })
 );

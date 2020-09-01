@@ -30,7 +30,7 @@ class User < ApplicationRecord
 
     has_many :likes
 
-    has_may :liked_comments,
+    has_many :liked_comments,
     through: :likes,
     source: :likeable,
     source_type: "Comment"

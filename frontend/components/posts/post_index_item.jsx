@@ -61,7 +61,7 @@ class PostIndexItem extends React.Component {
         } else {
             return(
                 <div className="response-icon">
-                    <a><i className="far fa-thumbs-up"></i>Like</a>
+                    <a><i className="far fa-thumbs-up" onClick={() => this.props.likePost({ id: this.props.post.id })} ></i>Like</a>
                 </div>
             )
         }
