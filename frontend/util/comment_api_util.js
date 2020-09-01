@@ -31,15 +31,13 @@ export const updateComment = comment => (
 export const likeComment = commentLike => (
     $.ajax({
         method: "POST",
-        url: `/api/comments/${commentLike.comment_id}/like`,
-        data: { commentLike }
+        url: `/api/comments/${commentLike.id}/like`
     })
 );
 
 export const unlikeComment = commentLike => (
     $.ajax({
         method: "POST",
-        url: `/api/comments/${commentLike.comment_id}/unlike`,
-        data: { commentLike }
+        url: `/api/comments/${commentLike.id}/unlike`
     })
 );

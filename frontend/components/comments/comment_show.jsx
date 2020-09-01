@@ -10,10 +10,17 @@ class CommentShow extends React.Component {
     isAuthor(){
         if ( this.props.comment.user.id === this.props.currentUser.id ) {
             return (
-                <span>&middot;<span className="comment-delete" onClick={() => this.props.deleteComment(this.props.comment.id)}> Delete</span></span>
+                // <span>&middot;<span className="comment-delete" onClick={() => this.props.deleteComment(this.props.comment.id)}> Delete</span></span>
+                <span><span className="comment-delete" onClick={() => this.props.deleteComment(this.props.comment.id)}><i className="far fa-trash-alt"></i> Delete</span></span>
+            )
+        } else if (this.props.comment.liked_user_ids.includes(this.props.currentUser.id)) {
+            return (
+                <span className="comment-delete" onClick={() => this.props.unlikeComment({ id: this.props.comment.id })}><i className="fas fa-thumbs-up"></i> Unlike</span>
             )
         } else {
-            return null;
+            return (
+                <span className="comment-delete" onClick={() => this.props.likeComment({ id: this.props.comment.id })}><i className="far fa-thumbs-up"></i> Like</span>
+            )
         }
     }
 
@@ -34,7 +41,7 @@ class CommentShow extends React.Component {
                         <Link to={`/profile/${comment.user.id}`}><h1 className="comment-main-name">{comment.user.first_name} {comment.user.last_name}</h1></Link>
                         <p>{comment.body}</p>
                     </div>
-                    <div className="comment-buttons">Like {this.isAuthor()}</div>
+                    <div className="comment-buttons">{this.isAuthor()}</div>
                 </div>
             </div>
         )

@@ -11,7 +11,7 @@ end
     json.comments do 
         post.comments.each do |comment|
             json.set! comment.id do 
-                json.extract! comment, :id, :user_id, :post_id, :body
+                json.extract! comment, :id, :user_id, :post_id, :body, :liked_user_ids
                 json.user do
                     json.extract! comment.user, :id, :first_name, :last_name
                     json.profilePhotoUrl url_for(comment.user.profile_photo) if comment.user.profile_photo.attached?

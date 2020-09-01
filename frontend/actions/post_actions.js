@@ -4,8 +4,6 @@ export const RECEIVE_ALL_POSTS = "RECEIVE_ALL_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
 export const RECEIVE_POST_ERROR = "RECEIVE_POST_ERROR";
-export const LIKE_POST = "LIKE_POST";
-export const UNLIKE_POST = "UNLIKE_POST";
 
 const receiveAllPosts = (payload) => ({
     type: RECEIVE_ALL_POSTS,
@@ -21,16 +19,6 @@ const removePost = (postId) => ({
     type: REMOVE_POST,
     postId
 });
-
-// const receivePostLike = (like) => ({
-//     type: LIKE_POST,
-//     like
-// });
-
-// const receivePostUnlike = (likeId) => ({
-//     type: UNLIKE_POST,
-//     likeId
-// });
 
 export const fetchPosts = () => dispatch => (
     PostApiUtil.fetchPosts()

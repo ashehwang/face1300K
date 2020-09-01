@@ -39,3 +39,13 @@ export const deleteComment = commentId => dispatch => (
     CommentApiUtil.deleteComment(commentId)
         .then(comment => dispatch(removeComment(comment)))
 );
+
+export const likeComment = (commentLike) => dispatch => (
+    CommentApiUtil.likeComment(commentLike)
+        .then(comment => dispatch(receiveComment(comment)))
+);
+
+export const unlikeComment = (commentLike) => dispatch => (
+    CommentApiUtil.unlikeComment(commentLike)
+        .then(comment => dispatch(receiveComment(comment)))
+);
