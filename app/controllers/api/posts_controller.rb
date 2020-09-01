@@ -52,6 +52,25 @@ class Api::PostsController < ApplicationController
         end
     end
 
+    def like
+        @like = Like.new(likeable_type: "Post", likeable_id: params[:id])
+        @like.user_id = current_user.id
+        if @like.save
+            render :like
+        else
+            render json: @like.errors, status: 422
+        end
+    end
+
+    def unlike
+        @like = Like.find_by(user_id: params[:user_id], likeable_id: params[:id], likeable_type: "Post")
+        if @like.destroy
+        render :like
+        else
+        render json: @like.errors.full_messages, status: :unprocessable_entity
+        end
+    end
+
     private
 
     def post_params
