@@ -142,3 +142,7 @@ i.fa-cat {
     color: #558c94;
     color: grey;
 }
+
+.hover:hover {
+    cursor: pointer;
+}

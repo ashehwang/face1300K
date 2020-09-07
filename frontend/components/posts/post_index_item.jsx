@@ -54,19 +54,19 @@ class PostIndexItem extends React.Component {
         if (this.props.currentUser.id === this.props.author.id) {
             if(!this.props.post) return null;
             return(
-                <div className="response-icon" onClick={() => this.props.openModal('editpost', this.props.post )} >
+                <div className="response-icon hover" onClick={() => this.props.openModal('editpost', this.props.post )} >
                     <a><i className="fas fa-edit"></i>Edit</a>
                 </div>
             )
         } else if (this.props.post.liked_user_ids.includes(this.props.currentUser.id)) {
             return(
-                <div className="response-icon liked" onClick={() => this.props.unlikePost({ id: this.props.post.id })} >
+                <div className="response-icon liked hover" onClick={() => this.props.unlikePost({ id: this.props.post.id })} >
                     <a><i className="fas fa-thumbs-up"></i>Unlike</a>
                 </div>
             )
         } else {
             return (
-                <div className="response-icon" onClick={() => this.props.likePost({ id: this.props.post.id })} >
+                <div className="response-icon hover" onClick={() => this.props.likePost({ id: this.props.post.id })} >
                     <a><i className="far fa-thumbs-up"></i>Like</a>
                 </div>
             )
@@ -74,7 +74,7 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
-        const {post, author, currentUser, comments} = this.props;
+        const { post, author, currentUser } = this.props;
 
     if (!post) {
         return null;
@@ -111,7 +111,7 @@ class PostIndexItem extends React.Component {
                 </div>
             </div>
             <div className="single-post-comments">
-                {post.comment_ids.map(comment_id => <CommentShowContainer key={comment_id} comment={comments[comment_id]} />)} 
+                {post.comment_ids.map(comment_id => <CommentShowContainer key={comment_id} commentId={comment_id} />)} 
             </div>
             <div className={`single-post-create-comments ${hidden}`}>
                 <img src={currentUserprpUrl} className="small-profile-pic"/>

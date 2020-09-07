@@ -28,7 +28,7 @@ class CommentShow extends React.Component {
     }
 
     render(){
-
+            debugger
         const { currentUser, comment } = this.props;
         const prpUrl = comment.user.profilePhotoUrl ? comment.user.profilePhotoUrl : "https://i.ibb.co/DRTq0KR/5cc28e190d41d2738de6.jpg";
 
