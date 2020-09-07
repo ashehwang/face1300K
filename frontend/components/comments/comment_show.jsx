@@ -8,18 +8,21 @@ class CommentShow extends React.Component {
     }
 
     isAuthor(){
-        if ( this.props.comment.user.id === this.props.currentUser.id ) {
+
+        const { comment, currentUser, deleteComment, likeComment, unlikeComment } = this.props;
+
+        if ( comment.user.id === currentUser.id ) {
             return (
                 // <span>&middot;<span className="comment-delete" onClick={() => this.props.deleteComment(this.props.comment.id)}> Delete</span></span>
-                <span><span className="comment-delete" onClick={() => this.props.deleteComment(this.props.comment.id)}><i className="far fa-trash-alt"></i> Delete</span></span>
+                <span><span className="comment-delete" onClick={() => deleteComment(comment.id)}><i className="far fa-trash-alt"></i> Delete</span></span>
             )
-        } else if (this.props.liked_user_ids.includes(this.props.currentUser.id)) {
+        } else if (comment.liked_user_ids.includes(currentUser.id)) {
             return (
-                <span className="comment-delete" onClick={() => this.props.unlikeComment({ id: this.props.comment.id })}><i className="fas fa-thumbs-up"></i> Unlike</span>
+                <span className="comment-delete" onClick={() => unlikeComment({ id: comment.id })}><i className="fas fa-thumbs-up"></i> Unlike</span>
             )
         } else {
             return (
-                <span className="comment-delete" onClick={() => this.props.likeComment({ id: this.props.comment.id })}><i className="far fa-thumbs-up"></i> Like</span>
+                <span className="comment-delete" onClick={() => likeComment({ id: comment.id })}><i className="far fa-thumbs-up"></i> Like</span>
             )
         }
     }

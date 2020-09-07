@@ -74,7 +74,7 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
-        const {post, author, currentUser } = this.props;
+        const {post, author, currentUser, comments, comment_ids } = this.props;
 
     if (!post) {
         return null;
@@ -111,7 +111,7 @@ class PostIndexItem extends React.Component {
                 </div>
             </div>
             <div className="single-post-comments">
-                {post.comment_ids.map(comment_id => <CommentShowContainer key={comment_id} commentId={comment_id}/>)} 
+                {comment_ids.map(comment_id => <CommentShowContainer key={comment_id} comment={comments[comment_id]} />)} 
             </div>
             <div className={`single-post-create-comments ${hidden}`}>
                 <img src={currentUserprpUrl} className="small-profile-pic"/>

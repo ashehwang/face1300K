@@ -4,8 +4,7 @@ import { deleteComment, likeComment, unlikeComment } from '../../actions/comment
 
 const mSTP = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    comment: state.entities.comments[ownProps.commentId],
-    liked_user_ids: state.entities.comments[ownProps.commentId].liked_user_ids
+    comment: ownProps.comment
 });
 
 const mDTP = dispatch => ({

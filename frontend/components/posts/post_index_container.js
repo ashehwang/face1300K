@@ -8,7 +8,7 @@ const mSTP = (state) => ({
     posts: Object.values(state.entities.posts),
     currentUser: state.entities.users[state.session.id],
     users: state.entities.users,
-    comment: state.entities.comments
+    comments: state.entities.comments
 });
 
 const mDTP = (dispatch) => ({
