@@ -33,7 +33,7 @@ class PostIndex extends React.Component {
                             <li><i className="fas fa-laugh-wink"></i>Feeling/Activity</li>
                         </ul>
                     </div>
-                        {posts.reverse().map(post => <PostIndexItem author={users[post.user_id]} currentUser={currentUser} createComment={createComment} key={post.id} post={post} deletePost={deletePost} openModal={openModal} likePost={likePost} unlikePost={unlikePost} comments={comments}/>)}
+                        {posts.reverse().map(post => <PostIndexItem author={users[post.user_id]} currentUser={currentUser} createComment={createComment} key={post.id} post={post} deletePost={deletePost} openModal={openModal} likePost={likePost} unlikePost={unlikePost} />)}
                 </div>
             </div>
         )
