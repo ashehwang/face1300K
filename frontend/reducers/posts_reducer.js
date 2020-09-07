@@ -17,8 +17,12 @@ const postsReducer = ( state = {}, action ) => {
             delete newState[action.postId];
             return newState;
         case RECEIVE_COMMENT: 
+            if(!state[action.comment.post_id].comment_ids.includes(action.comment.id)) {
             newState[action.comment.post_id].comment_ids.push(action.comment.id);
             return newState;
+            } else {
+                return state
+            }
         case REMOVE_COMMENT:
             let targetIdx = newState[action.comment.post_id].comment_ids.indexOf(action.comment.id);
             newState[action.comment.post_id].comment_ids.splice(targetIdx, 1);
