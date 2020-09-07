@@ -75,7 +75,6 @@ class PostIndexItem extends React.Component {
 
     render() {
         const {post, author, currentUser, comments} = this.props;
-        console.log(post.comment_ids)
 
     if (!post) {
         return null;
