@@ -107,7 +107,7 @@ class Profile extends React.Component {
 
     render(){
         
-        const { posts, user, currentUser, deletePost, users, createComment } = this.props;
+        const { posts, user, currentUser, deletePost, users, createComment, openModal, likePost, unlikePost } = this.props;
         if (!user || !posts) return null;
         const prpUrl = currentUser.profilePhotoUrl ? currentUser.profilePhotoUrl : "https://i.ibb.co/wzjv56z/5cc28e190d41d2738de6.jpg";
         const placeHolder = currentUser.id === user.id ? `What's on your mind, ${currentUser.first_name}?` : `Write something to ${user.first_name}...`
@@ -182,7 +182,7 @@ class Profile extends React.Component {
                         </div>
                     </div>
                     <div className="profile-post-index">
-                        {posts.reverse().map(post => <PostIndexItem createComment={createComment} deletePost={deletePost} author={users[post.user_id]} post={post} key={post.id} currentUser={currentUser}/>)}
+                        {posts.reverse().map(post => <PostIndexItem createComment={createComment} deletePost={deletePost} author={users[post.user_id]} post={post} key={post.id} currentUser={currentUser} openModal={openModal} likePost={likePost} unlikePost={unlikePost}/>)}
                     </div>
                 </div>
             </>
