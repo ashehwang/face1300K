@@ -13,7 +13,7 @@ class CommentShow extends React.Component {
                 // <span>&middot;<span className="comment-delete" onClick={() => this.props.deleteComment(this.props.comment.id)}> Delete</span></span>
                 <span><span className="comment-delete" onClick={() => this.props.deleteComment(this.props.comment.id)}><i className="far fa-trash-alt"></i> Delete</span></span>
             )
-        } else if (this.props.comment.liked_user_ids.includes(this.props.currentUser.id)) {
+        } else if (this.props.liked_user_ids.includes(this.props.currentUser.id)) {
             return (
                 <span className="comment-delete" onClick={() => this.props.unlikeComment({ id: this.props.comment.id })}><i className="fas fa-thumbs-up"></i> Unlike</span>
             )
