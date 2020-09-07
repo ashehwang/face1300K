@@ -97,7 +97,8 @@ class NavBar extends React.Component {
                 </div>
                 <div className="line"></div>
                 <div className="dropdown-feedback">
-                  <div className="dropdown-feedback-icon"><i className="fas fa-envelope-open-text"></i></div>
+                  <div className="dropdown-feedback-icon"><a href="http://www.ashehwang.me/" id="grey"><i className="fas fa-envelope-open-text"></i></a></div>
+                  {/* <div className="dropdown-feedback-icon"><i className="fas fa-envelope-open-text"></i></div> */}
                   <div className="dropdown-feeback-text">
                     <h1>Give Feedback</h1>
                     <p>Help us improve this functionbook</p>

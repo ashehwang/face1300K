@@ -207,3 +207,7 @@ img.dropdown-profile-pic {
     right: -7px;
     font-weight: 600;
 }
+
+#grey {
+    color: gray;
+}

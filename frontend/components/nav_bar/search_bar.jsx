@@ -32,6 +32,8 @@ class SearchBar extends React.Component {
     showSearchResults() {
         if (!this.state.showSearchResults) {
             return null;
+        } else if (!this.state.filter) {
+            return null;
         } else if (this.state.filter && this.props.users.length === 0) {
             return(
                 <div className="search-result-box">
