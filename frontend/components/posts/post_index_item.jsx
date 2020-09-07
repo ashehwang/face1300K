@@ -60,14 +60,14 @@ class PostIndexItem extends React.Component {
             )
         } else if (this.props.post.liked_user_ids.includes(this.props.currentUser.id)) {
             return(
-                <div className="response-icon liked">
-                    <a><i className="fas fa-thumbs-up" onClick={() => this.props.unlikePost({ id: this.props.post.id })} ></i>Unlike</a>
+                <div className="response-icon liked" onClick={() => this.props.unlikePost({ id: this.props.post.id })} >
+                    <a><i className="fas fa-thumbs-up"></i>Unlike</a>
                 </div>
             )
         } else {
             return (
-                <div className="response-icon">
-                    <a><i className="far fa-thumbs-up" onClick={() => this.props.likePost({ id: this.props.post.id })} ></i>Like</a>
+                <div className="response-icon" onClick={() => this.props.likePost({ id: this.props.post.id })} >
+                    <a><i className="far fa-thumbs-up"></i>Like</a>
                 </div>
             )
         }
